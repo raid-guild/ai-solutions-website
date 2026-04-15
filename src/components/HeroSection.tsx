@@ -13,7 +13,16 @@ const nodes = [
 ];
 
 const connections = [
-  [0, 3], [1, 3], [2, 3], [4, 3], [5, 0], [6, 0], [7, 2], [4, 7], [5, 1], [6, 4],
+  [0, 3],
+  [1, 3],
+  [2, 3],
+  [4, 3],
+  [5, 0],
+  [6, 0],
+  [7, 2],
+  [4, 7],
+  [5, 1],
+  [6, 4],
 ];
 
 const HeroSection = () => (
@@ -27,7 +36,7 @@ const HeroSection = () => (
           transition={{ delay: 0.2 }}
           className="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-6"
         >
-          Raid Guild Division
+          System Weavers Division
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -36,7 +45,9 @@ const HeroSection = () => (
           className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6"
         >
           We turn your operations into{" "}
-          <span className="text-primary text-glow-teal">agent-driven systems.</span>
+          <span className="text-primary text-glow-teal">
+            agent-driven systems.
+          </span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -44,7 +55,8 @@ const HeroSection = () => (
           transition={{ delay: 0.5, duration: 0.7 }}
           className="text-lg text-muted-foreground max-w-lg mb-8 leading-relaxed"
         >
-          Designing, deploying, and operating AI-powered workflows inside your business.
+          Designing, deploying, and operating AI-powered workflows inside your
+          business.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -52,10 +64,16 @@ const HeroSection = () => (
           transition={{ delay: 0.7 }}
           className="space-y-3 mb-10"
         >
-          {["Embedded with your team", "Built on your systems", "Continuously optimized"].map((point) => (
+          {[
+            "Embedded with your team",
+            "Built on your systems",
+            "Continuously optimized",
+          ].map((point) => (
             <div key={point} className="flex items-center gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-              <span className="text-sm text-muted-foreground font-mono">{point}</span>
+              <span className="text-sm text-muted-foreground font-mono">
+                {point}
+              </span>
             </div>
           ))}
         </motion.div>
@@ -65,7 +83,10 @@ const HeroSection = () => (
           transition={{ delay: 0.9 }}
           className="flex flex-wrap gap-4"
         >
-          <Button size="lg" className="rounded-sm font-heading tracking-wider uppercase text-sm px-8">
+          <Button
+            size="lg"
+            className="rounded-sm font-heading tracking-wider uppercase text-sm px-8"
+          >
             Request a Raid
           </Button>
           <Button
@@ -80,7 +101,11 @@ const HeroSection = () => (
 
       {/* Right - Node diagram */}
       <div className="relative h-[400px] lg:h-[500px] hidden lg:block">
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="xMidYMid meet"
+        >
           {connections.map(([from, to], i) => (
             <motion.line
               key={i}
@@ -100,7 +125,11 @@ const HeroSection = () => (
           <motion.div
             key={node.label}
             className="absolute flex flex-col items-center"
-            style={{ left: `${node.x}%`, top: `${node.y}%`, transform: "translate(-50%, -50%)" }}
+            style={{
+              left: `${node.x}%`,
+              top: `${node.y}%`,
+              transform: "translate(-50%, -50%)",
+            }}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: node.delay, duration: 0.5, type: "spring" }}
@@ -112,9 +141,15 @@ const HeroSection = () => (
                   : "border-border bg-card"
               }`}
               animate={{ y: [0, -4, 0] }}
-              transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: "easeInOut" }}
+              transition={{
+                duration: 3 + i * 0.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
             >
-              <span className="font-mono text-[8px] text-muted-foreground">{node.label}</span>
+              <span className="font-mono text-[8px] text-muted-foreground">
+                {node.label}
+              </span>
             </motion.div>
           </motion.div>
         ))}

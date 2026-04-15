@@ -16,14 +16,14 @@
     --primary: 160 63% 50%;
     --primary-foreground: 240 20% 3%;
 
-    --secondary: 140 10% 45%;
-    --secondary-foreground: 30 10% 90%;
+    --secondary: 347 100% 61%;
+    --secondary-foreground: 30 10% 96%;
 
     --muted: 240 10% 12%;
     --muted-foreground: 220 10% 50%;
 
-    --accent: 263 76% 66%;
-    --accent-foreground: 30 10% 90%;
+    --accent: 347 100% 61%;
+    --accent-foreground: 30 10% 96%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -54,17 +54,22 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Space Grotesk", sans-serif;
   }
 }
 
 @layer utilities {
   .font-heading {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
   }
   .font-mono-accent {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: "JetBrains Mono", monospace;
   }
   .text-glow-teal {
     text-shadow: 0 0 20px hsl(160 63% 50% / 0.3);
@@ -82,7 +87,7 @@
 
 /* Noise texture overlay */
 .noise-bg::before {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   opacity: 0.03;
@@ -93,13 +98,22 @@
 
 /* Thread pulse animation */
 @keyframes thread-pulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.7; }
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
 
 @keyframes data-flow {
-  0% { stroke-dashoffset: 20; }
-  100% { stroke-dashoffset: 0; }
+  0% {
+    stroke-dashoffset: 20;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
 
 .animate-thread-pulse {
