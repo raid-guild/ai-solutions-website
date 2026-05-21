@@ -2,19 +2,19 @@ import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 
 const layers = [
-  { name: "Interfaces", desc: "Where humans interact with systems" },
-  { name: "Agents", desc: "Decision + execution layer" },
-  { name: "Context", desc: "Knowledge, memory, and data" },
-  { name: "Integrations", desc: "APIs and internal systems" },
-  { name: "Evaluation", desc: "Monitoring, metrics, and improvement loops" },
+  { name: "Operators", desc: "The teams closest to the work" },
+  { name: "Agents", desc: "Decision and execution support" },
+  { name: "Context", desc: "Business knowledge, memory, and data" },
+  { name: "Integrations", desc: "APIs, tools, and internal systems" },
+  { name: "Operations", desc: "Monitoring, metrics, and improvement loops" },
 ];
 
 const SystemStackSection = () => (
   <section className="relative py-32">
     <div className="max-w-3xl mx-auto px-6">
       <AnimatedSection className="text-center mb-16">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-4">Architecture</p>
-        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold">The Fabric We Weave</h2>
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-4">Deployment Stack</p>
+        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold">What We Deploy Into</h2>
       </AnimatedSection>
 
       <div className="relative">

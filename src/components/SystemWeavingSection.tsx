@@ -4,17 +4,17 @@ import AnimatedSection from "./AnimatedSection";
 const pillars = [
   {
     title: "Identify",
-    copy: "We find the workflows where agents create 10–100x leverage—through speed, scale, or intelligence.",
-    points: ["Process mapping", "Opportunity sizing", "ROI modeling"],
+    copy: "We find the operational fronts where a deployed AI team can create immediate leverage.",
+    points: ["Process mapping", "Opportunity sizing", "Deployment plan"],
   },
   {
-    title: "Weave",
-    copy: "We connect your systems, data, and agents into a unified workflow that actually works.",
-    points: ["System integration", "Context + memory design", "Human + agent interfaces"],
+    title: "Deploy",
+    copy: "We embed engineers and operators with your team to ship production workflows inside your business.",
+    points: ["System integration", "Agent buildout", "Human + agent interfaces"],
   },
   {
     title: "Operate",
-    copy: "We run and refine your agent systems continuously—so they improve over time, not degrade.",
+    copy: "We stay close to the work, measuring performance and improving the system as the business changes.",
     points: ["Monitoring + evals", "KPI tracking", "Iteration loops"],
   },
 ];
@@ -24,9 +24,9 @@ const SystemWeavingSection = () => (
     <div className="max-w-7xl mx-auto px-6">
       <AnimatedSection className="text-center mb-20">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-4">What We Do</p>
-        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">System Weaving</h2>
+        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Forward Deployed Agency</h2>
         <p className="text-muted-foreground text-lg">
-          Workflow design. Agent deployment. Continuous operation.
+          Strategic audit. Embedded build team. Operated outcomes.
         </p>
       </AnimatedSection>
 

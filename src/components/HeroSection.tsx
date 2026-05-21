@@ -36,7 +36,7 @@ const HeroSection = () => (
           transition={{ delay: 0.2 }}
           className="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-6"
         >
-          System Weavers Division
+          Forward Deployed Agency
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -44,9 +44,9 @@ const HeroSection = () => (
           transition={{ delay: 0.3, duration: 0.8 }}
           className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6"
         >
-          We turn your operations into{" "}
+          Deploy an expert AI team into{" "}
           <span className="text-primary text-glow-teal">
-            agent-driven systems.
+            your business.
           </span>
         </motion.h1>
         <motion.p
@@ -55,8 +55,8 @@ const HeroSection = () => (
           transition={{ delay: 0.5, duration: 0.7 }}
           className="text-lg text-muted-foreground max-w-lg mb-8 leading-relaxed"
         >
-          Designing, deploying, and operating AI-powered workflows inside your
-          business.
+          Forward deployed engineers, operators, and agent specialists embedded
+          with your team to accelerate execution.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -65,9 +65,9 @@ const HeroSection = () => (
           className="space-y-3 mb-10"
         >
           {[
-            "Embedded with your team",
-            "Built on your systems",
-            "Continuously optimized",
+            "A deployable team, not a software handoff",
+            "Built inside your systems and workflows",
+            "Operated until outcomes compound",
           ].map((point) => (
             <div key={point} className="flex items-center gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -87,14 +87,14 @@ const HeroSection = () => (
             size="lg"
             className="rounded-sm font-heading tracking-wider uppercase text-sm px-8"
           >
-            Request a Raid
+            Deploy the Agency
           </Button>
           <Button
             size="lg"
             variant="outline"
             className="rounded-sm font-heading tracking-wider uppercase text-sm px-8 border-primary/30 text-primary hover:bg-primary/10"
           >
-            Start a Workflow Audit
+            Start an Opportunity Audit
           </Button>
         </motion.div>
       </div>

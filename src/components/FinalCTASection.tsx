@@ -36,28 +36,28 @@ const FinalCTASection = () => (
     <div className="max-w-3xl mx-auto px-6 relative z-10 text-center">
       <AnimatedSection>
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-          Bring us a workflow.{" "}
-          <span className="text-primary text-glow-teal">We'll show you what it becomes.</span>
+          Bring us a business bottleneck.{" "}
+          <span className="text-primary text-glow-teal">We'll deploy the team to unlock it.</span>
         </h2>
       </AnimatedSection>
 
       <AnimatedSection delay={0.1}>
         <p className="text-lg text-muted-foreground mb-12">
-          From manual process to autonomous system.
+          From AI ambition to operated capability inside your organization.
         </p>
       </AnimatedSection>
 
       <AnimatedSection delay={0.2}>
         <div className="flex flex-wrap justify-center gap-4">
           <Button size="lg" className="rounded-sm font-heading tracking-wider uppercase text-sm px-10">
-            Request a Raid
+            Deploy the Agency
           </Button>
           <Button
             size="lg"
             variant="outline"
             className="rounded-sm font-heading tracking-wider uppercase text-sm px-10 border-accent/40 text-accent hover:bg-accent/10"
           >
-            Summon the Weavers
+            Start the Audit
           </Button>
         </div>
       </AnimatedSection>

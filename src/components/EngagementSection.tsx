@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import AnimatedSection from "./AnimatedSection";
 
 const models = [
-  { title: "Workflow Audit", desc: "Identify high-leverage opportunities in 2–4 weeks." },
-  { title: "System Deployment", desc: "Design and implement a production-ready agent workflow." },
-  { title: "Agent Operations", desc: "Ongoing monitoring, evaluation, and optimization." },
-  { title: "Embedded Weaver", desc: "A dedicated operator inside your team." },
+  { title: "Opportunity Audit", desc: "Identify where a deployed AI team can create leverage in 2-4 weeks." },
+  { title: "Agency Deployment", desc: "Embed engineers and operators to build production-ready agent workflows." },
+  { title: "Operating Partnership", desc: "Ongoing monitoring, evaluation, and optimization against business KPIs." },
+  { title: "Embedded Team", desc: "Dedicated forward deployed talent working inside your organization." },
 ];
 
 const EngagementSection = () => (
@@ -35,7 +35,7 @@ const EngagementSection = () => (
 
       <AnimatedSection delay={0.4} className="text-center mt-12">
         <Button size="lg" variant="outline" className="rounded-sm font-heading tracking-wider uppercase text-sm border-primary/30 text-primary hover:bg-primary/10">
-          Start with an Audit
+          Start with an Opportunity Audit
         </Button>
       </AnimatedSection>
     </div>

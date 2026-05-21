@@ -14,13 +14,13 @@ const TheShiftSection = () => (
       <AnimatedSection>
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8">
           Software was the deliverable.{" "}
-          <span className="text-primary text-glow-teal">Now execution is.</span>
+          <span className="text-primary text-glow-teal">Now deployed capability is.</span>
         </h2>
       </AnimatedSection>
 
       <AnimatedSection delay={0.1}>
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-          AI agents don't create value on their own. They require redesigned workflows, connected systems, and continuous operation.
+          AI does not create business impact by sitting in a tool stack. It needs a team close enough to understand the work, redesign the flow, connect the systems, and keep improving it in production.
         </p>
       </AnimatedSection>
 
@@ -28,9 +28,9 @@ const TheShiftSection = () => (
         <p className="text-sm text-muted-foreground mb-6 font-mono uppercase tracking-wider">Most teams:</p>
         <div className="space-y-4 mb-10">
           {[
-            "Don't know which workflows to automate",
-            "Can't integrate across fragmented systems",
-            "Don't have the ability to operate agents reliably",
+            "Know AI matters, but not where to deploy it first",
+            "Need speed across fragmented systems and teams",
+            "Lack the dedicated capacity to operate new workflows reliably",
           ].map((point) => (
             <div key={point} className="flex items-start gap-3">
               <div className="w-1 h-1 rounded-full bg-muted-foreground/40 mt-2.5 shrink-0" />
@@ -42,8 +42,8 @@ const TheShiftSection = () => (
 
       <AnimatedSection delay={0.3}>
         <p className="text-xl font-heading font-semibold leading-relaxed">
-          There is a gap between AI capability and real business impact.{" "}
-          <span className="text-accent text-glow-violet">We operate in that gap.</span>
+          There is a gap between AI capability and real business acceleration.{" "}
+          <span className="text-accent text-glow-violet">We deploy into that gap.</span>
         </p>
       </AnimatedSection>
     </div>

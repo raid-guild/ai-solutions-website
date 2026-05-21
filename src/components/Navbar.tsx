@@ -26,7 +26,7 @@ const Navbar = () => {
           size="sm"
           className="rounded-sm font-heading text-xs tracking-wider uppercase"
         >
-          Request a Raid
+          Deploy the Agency
         </Button>
       </div>
     </nav>

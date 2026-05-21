@@ -26,10 +26,10 @@ const Index = () => (
     <footer className="border-t border-border py-8">
       <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <span className="font-heading text-sm text-muted-foreground">
-          The System Weavers · Raid Guild Division
+          Forward Deployed Agency · Raid Guild
         </span>
         <span className="font-mono text-xs text-muted-foreground/50">
-          Systems as fabric. Agents as threads.
+          Embedded teams. Agentic systems. Operated outcomes.
         </span>
       </div>
     </footer>

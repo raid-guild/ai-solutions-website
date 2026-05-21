@@ -11,18 +11,18 @@ const EmbeddedSection = () => (
         <AnimatedSection>
           <p className="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-4">How We Work</p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold leading-tight mb-6">
-            We don't deliver software.{" "}
-            <span className="text-primary text-glow-teal">We embed and operate.</span>
+            We don't hand you software.{" "}
+            <span className="text-primary text-glow-teal">We deploy a team.</span>
           </h2>
         </AnimatedSection>
         <AnimatedSection delay={0.1}>
           <p className="text-muted-foreground leading-relaxed mb-8">
-            We work inside your systems, alongside your team, redesigning workflows and deploying agents where they create real leverage. We collaborate with operators—not just IT—so what we build actually gets used.
+            We place a small, senior agency team inside your organization to redesign workflows, build agentic systems, and unblock execution where the business feels friction. We work with operators, leaders, and technical teams so the new capability becomes part of how work gets done.
           </p>
         </AnimatedSection>
         <AnimatedSection delay={0.2}>
           <div className="space-y-3 mb-8">
-            {["Forward-deployed engineers", "Deep domain immersion", "Tight feedback loops"].map((point) => (
+            {["Forward-deployed engineers", "Operator-led implementation", "Tight feedback loops"].map((point) => (
               <div key={point} className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                 <span className="text-sm text-muted-foreground font-mono">{point}</span>
@@ -32,7 +32,7 @@ const EmbeddedSection = () => (
         </AnimatedSection>
         <AnimatedSection delay={0.3}>
           <p className="font-heading font-semibold text-lg">
-            We stay until the system <span className="text-accent text-glow-violet">works without us.</span>
+            We stay until the capability <span className="text-accent text-glow-violet">runs inside the business.</span>
           </p>
         </AnimatedSection>
       </div>

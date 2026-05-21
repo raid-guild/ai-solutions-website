@@ -20,19 +20,19 @@ const RaidGuildSection = () => (
 
       <AnimatedSection delay={0.1}>
         <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-4">
-          A decentralized collective of elite builders, known for navigating complex systems and shipping in uncertain environments.
+          A decentralized collective of elite builders, known for embedding in complex environments and shipping when the path is unclear.
         </p>
         <p className="text-lg text-foreground font-heading font-semibold mb-12">
-          We've built frontier products. Now we operate them.
+          We've built frontier products. Now we deploy teams that turn them into business capability.
         </p>
       </AnimatedSection>
 
       <AnimatedSection delay={0.2}>
         <div className="grid sm:grid-cols-3 gap-8">
           {[
-            "Deep systems expertise",
-            "Proven coordination at scale",
-            "Native to emerging tech + org design",
+            "Senior builders who embed fast",
+            "Proven coordination across messy systems",
+            "Native to AI, automation, and org design",
           ].map((point, i) => (
             <motion.div
               key={point}
