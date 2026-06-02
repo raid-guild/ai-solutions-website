@@ -8,6 +8,7 @@ type Offering = {
   tier: string;
   title: string;
   price: string;
+  outcome: string;
   summary: string;
   includes: string[];
   bestFor?: string;
@@ -19,8 +20,10 @@ const offerings: Offering[] = [
     tier: "Entry Sprint",
     title: "Operational Leverage Sprint",
     price: "$3k-$7k",
+    outcome:
+      "You get one painful operational bottleneck turned into a working AI-assisted workflow.",
     summary:
-      "A focused 1-2 week engagement where Raid Guild identifies and implements one high-impact operational improvement using AI-native systems. Ideal for teams wanting to test practical AI implementation without a large commitment.",
+      "A focused 1-2 week engagement for teams that want practical proof of AI leverage before making a larger commitment.",
     includes: [
       "Workflow mapping",
       "Bottleneck identification",
@@ -34,8 +37,10 @@ const offerings: Offering[] = [
     tier: "Diagnostic + Build",
     title: "AI Readiness Diagnostic + Build",
     price: "$8k-$15k",
+    outcome:
+      "You get a clear AI operations roadmap plus one deployed workflow your team can actually use.",
     summary:
-      "A hybrid assessment and implementation package designed to help organizations move from AI experimentation to operational AI systems.",
+      "A hybrid assessment and implementation package for organizations ready to move from AI experiments into operational systems.",
     includes: [
       "Operational systems assessment",
       "AI opportunity mapping",
@@ -50,8 +55,10 @@ const offerings: Offering[] = [
     tier: "Deployment",
     title: "Refactory Deployment Package",
     price: "$10k-$25k",
+    outcome:
+      "You get a customized operating system for coordination, automation, and AI-native process management.",
     summary:
-      "Deploy Refactory, Raid Guild's internally incubated workflow automation and operational tooling system, customized to your organization.",
+      "Refactory is Raid Guild's internally incubated workflow automation and operational tooling system, adapted to the way your organization works.",
     includes: [
       "Workflow integration",
       "Operational automation setup",
@@ -66,8 +73,10 @@ const offerings: Offering[] = [
     tier: "Knowledge Systems",
     title: "Internal Copilot Deployment",
     price: "$6k-$18k",
+    outcome:
+      "You get an internal assistant that helps your team find answers, follow SOPs, and stop losing knowledge.",
     summary:
-      "Deploy an AI-powered internal assistant connected to your company knowledge, SOPs, documentation, and operational systems.",
+      "An AI-powered internal assistant connected to your company knowledge, documentation, SOPs, and operational systems.",
     includes: [
       "Internal knowledge ingestion",
       "Slack/Discord/chat integration",
@@ -82,7 +91,10 @@ const offerings: Offering[] = [
     tier: "Focused Fix",
     title: "Workflow Rescue Package",
     price: "$4k-$12k",
-    summary: "Fix one painful workflow that wastes time every week.",
+    outcome:
+      "You get one recurring workflow cleaned up, automated, and documented so it stops draining the team every week.",
+    summary:
+      "A focused implementation for teams that already know where work is getting stuck and want it fixed.",
     includes: [
       "Workflow analysis",
       "Automation implementation",
@@ -251,14 +263,18 @@ const Offerings = () => (
                           {offering.tier}
                         </p>
                       </div>
-                      <h3 className="font-heading text-2xl font-semibold leading-tight">
+                      <p className="font-heading text-sm uppercase tracking-wider text-muted-foreground">
                         {offering.title}
-                      </h3>
+                      </p>
                     </div>
                     <div className="border border-border bg-background/60 px-3 py-2 font-mono text-sm text-foreground">
                       {offering.price}
                     </div>
                   </div>
+
+                  <h3 className="mb-4 max-w-4xl font-heading text-2xl font-semibold leading-tight md:text-3xl">
+                    {offering.outcome}
+                  </h3>
 
                   <p className="mb-6 max-w-3xl text-sm leading-relaxed text-muted-foreground">
                     {offering.summary}
