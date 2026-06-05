@@ -1,35 +1,28 @@
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
-const nodes = [
-  { label: "CRM", x: 58, y: 25, delay: 0.3 },
-  { label: "Docs", x: 84, y: 56, delay: 0.5 },
-  { label: "Inbox", x: 38, y: 70, delay: 0.7 },
-  { label: "Raida", x: 63, y: 50, delay: 0.4 },
-  { label: "API", x: 29, y: 36, delay: 0.6 },
-  { label: "Memory", x: 79, y: 30, delay: 0.8 },
-  { label: "Discord", x: 48, y: 15, delay: 0.5 },
-  { label: "Ops", x: 19, y: 55, delay: 0.9 },
-];
-
-const connections = [
-  [0, 3],
-  [1, 3],
-  [2, 3],
-  [4, 3],
-  [5, 0],
-  [6, 0],
-  [7, 2],
-  [4, 7],
-  [5, 1],
-  [6, 4],
-];
-
 const HeroSection = () => (
-  <section id="home" className="relative min-h-screen flex items-center pt-16">
-    <div className="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-      <div className="z-10">
+  <section
+    id="home"
+    className="relative flex min-h-screen items-center overflow-hidden bg-background pt-16"
+  >
+    <Image
+      src="/images/abstract-system-graph-hero.png"
+      alt=""
+      aria-hidden="true"
+      fill
+      priority
+      sizes="100vw"
+      className="object-cover object-center"
+    />
+    <div className="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-background/1" />
+    <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,transparent_0%,hsl(var(--background)/0.03)_45%,hsl(var(--background)/0.01)_100%)]" />
+
+    <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-6">
+      <div className="max-w-2xl">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -101,61 +94,6 @@ const HeroSection = () => (
             <Link href="/offerings">View Service Packages</Link>
           </Button>
         </motion.div>
-      </div>
-
-      <div className="relative hidden h-[500px] lg:block">
-        <svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          {connections.map(([from, to], i) => (
-            <motion.line
-              key={i}
-              x1={`${nodes[from].x}`}
-              y1={`${nodes[from].y}`}
-              x2={`${nodes[to].x}`}
-              y2={`${nodes[to].y}`}
-              stroke="hsl(160 63% 50%)"
-              strokeWidth="0.15"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 0.3 }}
-              transition={{ delay: 0.8 + i * 0.1, duration: 1.2 }}
-            />
-          ))}
-        </svg>
-        {nodes.map((node, i) => (
-          <motion.div
-            key={node.label}
-            className="absolute flex flex-col items-center"
-            style={{
-              left: `${node.x}%`,
-              top: `${node.y}%`,
-              transform: "translate(-50%, -50%)",
-            }}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: node.delay, duration: 0.5, type: "spring" }}
-          >
-            <motion.div
-              className={`w-10 h-10 rounded-sm border flex items-center justify-center ${
-                node.label === "Raida"
-                  ? "border-primary/60 bg-primary/10 glow-teal"
-                  : "border-border bg-card"
-              }`}
-              animate={{ y: [0, -4, 0] }}
-              transition={{
-                duration: 3 + i * 0.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <span className="font-mono text-[8px] text-muted-foreground">
-                {node.label}
-              </span>
-            </motion.div>
-          </motion.div>
-        ))}
       </div>
     </div>
 

@@ -25,7 +25,7 @@ export const mercenaries: Mercenary[] = [
   },
   {
     name: "Sero",
-    title: "Frontend",
+    title: "AI Research",
     link: "https://github.com/0xSero",
     imagePath: "/images/member-sero.png",
     roleIcon: "/images/icon-og-community.svg",
@@ -123,7 +123,7 @@ export const mercenaries: Mercenary[] = [
   },
   {
     name: "Skuhl",
-    title: "Fullstack",
+    title: "Butchery",
     link: "https://peachtycoon.com",
     imagePath: "/images/member-samkuhlman.png",
     roleIcon: "/images/icon-og-education.svg",
@@ -211,14 +211,13 @@ export const mercenaries: Mercenary[] = [
     imagePath: "/images/member-penguin.png",
     roleIcon: "/images/icon-og-raidguild.svg",
   },
-    {
+  {
     name: "Shawky",
     title: "Fullstack",
     link: "https://github.com/sshmm",
     imagePath: "/images/member-shawky.png",
     roleIcon: "/images/icon-og-marketingdesign.svg",
   },
-
 ];
 
 export const shuffledMercenaries = shuffleArray(mercenaries);
