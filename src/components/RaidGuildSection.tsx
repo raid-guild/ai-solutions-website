@@ -23,7 +23,7 @@ const RaidGuildSection = () => (
           A decentralized collective of elite builders, known for embedding in complex environments and shipping when the path is unclear.
         </p>
         <p className="text-lg text-foreground font-heading font-semibold mb-12">
-          We've built frontier products. Now we deploy teams that turn them into business capability.
+          We&apos;ve built frontier products. Now we deploy teams that turn them into business capability.
         </p>
       </AnimatedSection>
 

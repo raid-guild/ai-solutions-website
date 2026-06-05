@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { ArrowRight, Check, CircleDot, Layers, Waypoints } from "lucide-react";
 import Navbar from "@/components/Navbar";

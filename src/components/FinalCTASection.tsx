@@ -2,10 +2,15 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "./AnimatedSection";
 
+const pseudoRandom = (seed: number) => {
+  const value = Math.sin(seed * 12.9898) * 43758.5453;
+  return value - Math.floor(value);
+};
+
 // Generate a fully connected mesh of nodes for the background
 const meshNodes = Array.from({ length: 12 }, (_, i) => ({
-  x: 10 + (i % 4) * 28 + Math.random() * 10,
-  y: 15 + Math.floor(i / 4) * 30 + Math.random() * 10,
+  x: 10 + (i % 4) * 28 + pseudoRandom(i + 1) * 10,
+  y: 15 + Math.floor(i / 4) * 30 + pseudoRandom(i + 13) * 10,
 }));
 
 const FinalCTASection = () => (
@@ -26,7 +31,11 @@ const FinalCTASection = () => (
               stroke="hsl(160 63% 50%)"
               strokeWidth="0.2"
               animate={{ opacity: [0.3, 0.7, 0.3] }}
-              transition={{ duration: 3 + Math.random() * 2, repeat: Infinity, delay: Math.random() * 2 }}
+              transition={{
+                duration: 3 + pseudoRandom(i * 17 + j) * 2,
+                repeat: Infinity,
+                delay: pseudoRandom(i * 31 + j) * 2,
+              }}
             />
           );
         })
@@ -37,7 +46,7 @@ const FinalCTASection = () => (
       <AnimatedSection>
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
           Bring us a business bottleneck.{" "}
-          <span className="text-primary text-glow-teal">We'll deploy the team to unlock it.</span>
+          <span className="text-primary text-glow-teal">We&apos;ll deploy the team to unlock it.</span>
         </h2>
       </AnimatedSection>
 
