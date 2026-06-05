@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 
 const anchorLinks = [
   { href: "/#projects", label: "Projects", className: "hidden md:inline" },
+  { href: "/#media", label: "Media", className: "hidden lg:inline" },
 ];
 
 const Navbar = () => {
