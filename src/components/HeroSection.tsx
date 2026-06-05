@@ -1,15 +1,16 @@
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 const nodes = [
-  { label: "CRM", x: 60, y: 25, delay: 0.3 },
-  { label: "Docs", x: 85, y: 55, delay: 0.5 },
-  { label: "Inbox", x: 40, y: 70, delay: 0.7 },
-  { label: "Agent", x: 65, y: 50, delay: 0.4 },
-  { label: "API", x: 30, y: 35, delay: 0.6 },
-  { label: "Data", x: 80, y: 30, delay: 0.8 },
-  { label: "Slack", x: 50, y: 15, delay: 0.5 },
-  { label: "ERP", x: 20, y: 55, delay: 0.9 },
+  { label: "CRM", x: 58, y: 25, delay: 0.3 },
+  { label: "Docs", x: 84, y: 56, delay: 0.5 },
+  { label: "Inbox", x: 38, y: 70, delay: 0.7 },
+  { label: "Raida", x: 63, y: 50, delay: 0.4 },
+  { label: "API", x: 29, y: 36, delay: 0.6 },
+  { label: "Memory", x: 79, y: 30, delay: 0.8 },
+  { label: "Discord", x: 48, y: 15, delay: 0.5 },
+  { label: "Ops", x: 19, y: 55, delay: 0.9 },
 ];
 
 const connections = [
@@ -26,9 +27,8 @@ const connections = [
 ];
 
 const HeroSection = () => (
-  <section className="relative min-h-screen flex items-center pt-16">
+  <section id="home" className="relative min-h-screen flex items-center pt-16">
     <div className="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-      {/* Left copy */}
       <div className="z-10">
         <motion.p
           initial={{ opacity: 0 }}
@@ -36,7 +36,7 @@ const HeroSection = () => (
           transition={{ delay: 0.2 }}
           className="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-6"
         >
-          Forward Deployed Agency
+          Forward Deployed AI Mercenaries
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -44,9 +44,9 @@ const HeroSection = () => (
           transition={{ delay: 0.3, duration: 0.8 }}
           className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6"
         >
-          Deploy an expert AI team into{" "}
+          Slay your digital demons with{" "}
           <span className="text-primary text-glow-teal">
-            your business.
+            agentic systems.
           </span>
         </motion.h1>
         <motion.p
@@ -55,8 +55,9 @@ const HeroSection = () => (
           transition={{ delay: 0.5, duration: 0.7 }}
           className="text-lg text-muted-foreground max-w-lg mb-8 leading-relaxed"
         >
-          Forward deployed engineers, operators, and agent specialists embedded
-          with your team to accelerate execution.
+          RaidGuild AI is a collective of builders, operators, and agent
+          specialists ready to embed with your team, wire into your context, and
+          ship automation that survives contact with reality.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -65,9 +66,9 @@ const HeroSection = () => (
           className="space-y-3 mb-10"
         >
           {[
-            "A deployable team, not a software handoff",
-            "Built inside your systems and workflows",
-            "Operated until outcomes compound",
+            "Mercenary teams, not software handoffs",
+            "Agents built inside your systems and workflows",
+            "Context, comms, and operations woven together",
           ].map((point) => (
             <div key={point} className="flex items-center gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -86,21 +87,22 @@ const HeroSection = () => (
           <Button
             size="lg"
             className="rounded-sm font-heading tracking-wider uppercase text-sm px-8"
+            asChild
           >
-            Deploy the Agency
+            <Link href="/contact">Deploy the Agency</Link>
           </Button>
           <Button
             size="lg"
             variant="outline"
             className="rounded-sm font-heading tracking-wider uppercase text-sm px-8 border-primary/30 text-primary hover:bg-primary/10"
+            asChild
           >
-            Start an Opportunity Audit
+            <Link href="/offerings">View Offerings</Link>
           </Button>
         </motion.div>
       </div>
 
-      {/* Right - Node diagram */}
-      <div className="relative h-[400px] lg:h-[500px] hidden lg:block">
+      <div className="relative hidden h-[500px] lg:block">
         <svg
           className="absolute inset-0 w-full h-full"
           viewBox="0 0 100 100"
@@ -136,7 +138,7 @@ const HeroSection = () => (
           >
             <motion.div
               className={`w-10 h-10 rounded-sm border flex items-center justify-center ${
-                node.label === "Agent"
+                node.label === "Raida"
                   ? "border-primary/60 bg-primary/10 glow-teal"
                   : "border-border bg-card"
               }`}

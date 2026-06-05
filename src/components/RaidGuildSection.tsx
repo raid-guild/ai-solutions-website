@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 
 const RaidGuildSection = () => (
-  <section className="relative py-32 overflow-hidden">
+  <section id="origins" className="relative scroll-mt-20 py-32 overflow-hidden">
     {/* Sigil background */}
     <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 400 400">
       <polygon points="200,40 360,150 310,340 90,340 40,150" fill="none" stroke="hsl(263 76% 66%)" strokeWidth="1" />
@@ -14,25 +14,29 @@ const RaidGuildSection = () => (
       <AnimatedSection>
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-accent mb-4">Origins</p>
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-          Built by <span className="text-accent text-glow-violet">Raid Guild</span>
+          RaidGuild, now deployed against{" "}
+          <span className="text-accent text-glow-violet">AI demons.</span>
         </h2>
       </AnimatedSection>
 
       <AnimatedSection delay={0.1}>
         <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-4">
-          A decentralized collective of elite builders, known for embedding in complex environments and shipping when the path is unclear.
+          RaidGuild is a decentralized collective of forward deployed
+          mercenaries ready to slay digital demons. The web3 guild still ships
+          decentralized products; this front deploys the same builder culture
+          into AI systems, agent operations, and automation strategy.
         </p>
         <p className="text-lg text-foreground font-heading font-semibold mb-12">
-          We&apos;ve built frontier products. Now we deploy teams that turn them into business capability.
+          Same guild instincts. Different battlefield.
         </p>
       </AnimatedSection>
 
       <AnimatedSection delay={0.2}>
         <div className="grid sm:grid-cols-3 gap-8">
           {[
-            "Senior builders who embed fast",
-            "Proven coordination across messy systems",
-            "Native to AI, automation, and org design",
+            "Senior mercenaries who embed fast",
+            "Battle-tested coordination across messy systems",
+            "Native to agents, automation, and org design",
           ].map((point, i) => (
             <motion.div
               key={point}

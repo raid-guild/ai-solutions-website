@@ -1,10 +1,11 @@
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "./AnimatedSection";
 
 const pseudoRandom = (seed: number) => {
-  const value = Math.sin(seed * 12.9898) * 43758.5453;
-  return value - Math.floor(value);
+  const value = (seed * 9301 + 49297) % 233280;
+  return value / 233280;
 };
 
 // Generate a fully connected mesh of nodes for the background
@@ -58,15 +59,20 @@ const FinalCTASection = () => (
 
       <AnimatedSection delay={0.2}>
         <div className="flex flex-wrap justify-center gap-4">
-          <Button size="lg" className="rounded-sm font-heading tracking-wider uppercase text-sm px-10">
-            Deploy the Agency
+          <Button
+            size="lg"
+            className="rounded-sm font-heading tracking-wider uppercase text-sm px-10"
+            asChild
+          >
+            <Link href="/contact">Deploy the Agency</Link>
           </Button>
           <Button
             size="lg"
             variant="outline"
             className="rounded-sm font-heading tracking-wider uppercase text-sm px-10 border-accent/40 text-accent hover:bg-accent/10"
+            asChild
           >
-            Start the Audit
+            <Link href="/offerings">Start the Audit</Link>
           </Button>
         </div>
       </AnimatedSection>

@@ -54,6 +54,10 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   h1,
   h2,
   h3,

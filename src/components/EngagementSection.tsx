@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "./AnimatedSection";
@@ -10,7 +11,7 @@ const models = [
 ];
 
 const EngagementSection = () => (
-  <section className="relative py-32">
+  <section id="engage" className="relative scroll-mt-20 py-32">
     <div className="max-w-5xl mx-auto px-6">
       <AnimatedSection className="text-center mb-16">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-4">Engagement</p>
@@ -34,8 +35,13 @@ const EngagementSection = () => (
       </div>
 
       <AnimatedSection delay={0.4} className="text-center mt-12">
-        <Button size="lg" variant="outline" className="rounded-sm font-heading tracking-wider uppercase text-sm border-primary/30 text-primary hover:bg-primary/10">
-          Start with an Opportunity Audit
+        <Button
+          size="lg"
+          variant="outline"
+          className="rounded-sm font-heading tracking-wider uppercase text-sm border-primary/30 text-primary hover:bg-primary/10"
+          asChild
+        >
+          <Link href="/contact">Start with an Opportunity Audit</Link>
         </Button>
       </AnimatedSection>
     </div>

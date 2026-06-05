@@ -3,8 +3,9 @@ import Providers from "@/app/providers";
 import "@/index.css";
 
 export const metadata: Metadata = {
-  title: "System Weaver",
-  description: "Embedded teams. Agentic systems. Operated outcomes.",
+  title: "RaidGuild AI Solutions",
+  description:
+    "Forward deployed AI mercenaries building agentic systems, context lakes, and operated automation for teams with digital demons to slay.",
 };
 
 export default function RootLayout({
