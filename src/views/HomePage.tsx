@@ -4,15 +4,18 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import MercenariesSection from "@/components/MercenariesSection";
 import AIProjectsSection from "@/components/AIProjectsSection";
+import MediaSection from "@/components/MediaSection";
 import RaidGuildSection from "@/components/RaidGuildSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import type { MediaPost } from "@/lib/portal-posts";
 
-const Index = () => (
+const Index = ({ mediaPosts }: { mediaPosts: MediaPost[] }) => (
   <div className="noise-bg relative">
     <Navbar />
     <HeroSection />
     <MercenariesSection />
     <AIProjectsSection />
+    <MediaSection posts={mediaPosts} />
     <RaidGuildSection />
     <FinalCTASection />
 
