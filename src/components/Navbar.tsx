@@ -5,10 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const anchorLinks = [
-  { href: "/#model", label: "Model", className: "hidden lg:inline" },
-  { href: "/#mercenaries", label: "Mercenaries", className: "hidden lg:inline" },
   { href: "/#projects", label: "Projects", className: "hidden md:inline" },
-  { href: "/#engage", label: "Engage", className: "hidden xl:inline" },
 ];
 
 const Navbar = () => {

@@ -120,73 +120,64 @@ const MercenariesSection = () => (
   <section id="mercenaries" className="relative scroll-mt-20 py-32 overflow-hidden">
     <div className="absolute left-0 top-12 h-px w-1/3 bg-gradient-to-r from-accent/50 to-transparent" />
     <div className="max-w-7xl mx-auto px-6">
-      <div className="grid gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-        <AnimatedSection>
-          <div className="flex flex-col items-center gap-8">
-            <MercenaryGrid />
-            <p className="max-w-xl text-center font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
-              Battle-tested RaidGuild talent. Click to delve deeper.
-            </p>
-          </div>
-        </AnimatedSection>
+      <AnimatedSection className="mx-auto mb-12 max-w-4xl text-center">
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-accent mb-4">
+          Meet Your Mercenaries
+        </p>
+        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+          Forward deployed mercenaries ready to slay your{" "}
+          <span className="text-accent text-glow-violet">digital demons.</span>
+        </h2>
+      </AnimatedSection>
 
-        <div>
-          <AnimatedSection className="mb-10">
-            <p className="font-mono text-xs tracking-[0.2em] uppercase text-accent mb-4">
-              Meet Your Mercenaries
-            </p>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-              Forward deployed mercenaries ready to slay your{" "}
-              <span className="text-accent text-glow-violet">digital demons.</span>
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              We bring the RaidGuild operating model into AI: senior builders
-              who embed quickly, map the haunted corners of your org, and turn
-              the messy work into agent-assisted systems your team can trust.
-            </p>
-          </AnimatedSection>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {mercenaryGuilds.map((guild, i) => {
-              const Icon = guild.icon;
-
-              return (
-                <AnimatedSection key={guild.title} delay={i * 0.08}>
-                  <motion.div
-                    className="h-full rounded-sm border border-border bg-card/50 p-6 backdrop-blur-sm"
-                    whileHover={{
-                      borderColor: "hsl(347 100% 61% / 0.35)",
-                      y: -3,
-                    }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    <Icon className="mb-5 h-5 w-5 text-primary" aria-hidden="true" />
-                    <h3 className="font-heading text-lg font-semibold mb-3">
-                      {guild.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      {guild.copy}
-                    </p>
-                  </motion.div>
-                </AnimatedSection>
-              );
-            })}
-          </div>
-
-          <AnimatedSection delay={0.35} className="mt-10">
-            <Button
-              variant="outline"
-              className="rounded-sm border-accent/30 text-accent hover:bg-accent/10 hover:text-accent"
-              asChild
-            >
-              <Link href="/contact">
-                Hire the Mercenaries
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-            </Button>
-          </AnimatedSection>
+      <AnimatedSection>
+        <div className="flex flex-col items-center gap-6">
+          <MercenaryGrid />
+          <p className="max-w-xl text-center font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
+            Battle-tested RaidGuild talent. Click to delve deeper.
+          </p>
         </div>
+      </AnimatedSection>
+
+      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {mercenaryGuilds.map((guild, i) => {
+          const Icon = guild.icon;
+
+          return (
+            <AnimatedSection key={guild.title} delay={i * 0.08}>
+              <motion.div
+                className="h-full rounded-sm border border-border bg-card/50 p-6 backdrop-blur-sm"
+                whileHover={{
+                  borderColor: "hsl(347 100% 61% / 0.35)",
+                  y: -3,
+                }}
+                transition={{ duration: 0.25 }}
+              >
+                <Icon className="mb-5 h-5 w-5 text-primary" aria-hidden="true" />
+                <h3 className="font-heading text-lg font-semibold mb-3">
+                  {guild.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {guild.copy}
+                </p>
+              </motion.div>
+            </AnimatedSection>
+          );
+        })}
       </div>
+
+      <AnimatedSection delay={0.35} className="mt-10 text-center">
+        <Button
+          variant="outline"
+          className="rounded-sm border-accent/30 text-accent hover:bg-accent/10 hover:text-accent"
+          asChild
+        >
+          <Link href="/contact">
+            Hire the Mercenaries
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+        </Button>
+      </AnimatedSection>
     </div>
 
     <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />

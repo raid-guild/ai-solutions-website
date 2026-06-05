@@ -2,10 +2,8 @@
 
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import OperatingModelSection from "@/components/OperatingModelSection";
 import MercenariesSection from "@/components/MercenariesSection";
 import AIProjectsSection from "@/components/AIProjectsSection";
-import EngagementSection from "@/components/EngagementSection";
 import RaidGuildSection from "@/components/RaidGuildSection";
 import FinalCTASection from "@/components/FinalCTASection";
 
@@ -13,10 +11,8 @@ const Index = () => (
   <div className="noise-bg relative">
     <Navbar />
     <HeroSection />
-    <OperatingModelSection />
     <MercenariesSection />
     <AIProjectsSection />
-    <EngagementSection />
     <RaidGuildSection />
     <FinalCTASection />
 
