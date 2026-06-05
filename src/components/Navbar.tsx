@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
@@ -28,8 +29,19 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="font-heading font-semibold text-lg tracking-tight text-accent">
-          Raid Guild AI
+        <Link
+          href="/"
+          className="flex items-center gap-2 font-heading text-lg font-semibold tracking-tight text-accent"
+        >
+          <Image
+            src="/images/Logomark.svg"
+            alt=""
+            aria-hidden="true"
+            width={28}
+            height={28}
+            className="h-7 w-7"
+          />
+          <span>Raid Guild AI</span>
         </Link>
         <div className="flex items-center gap-3">
           {anchorLinks.map((link) => (

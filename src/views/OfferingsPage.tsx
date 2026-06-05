@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Check, CircleDot, Layers, Waypoints } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -374,7 +375,15 @@ const Offerings = () => (
 
     <footer className="relative z-10 border-t border-border py-8">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
-        <span className="font-heading text-sm text-muted-foreground">
+        <span className="flex items-center gap-2 font-heading text-sm text-muted-foreground">
+          <Image
+            src="/images/Logomark.svg"
+            alt=""
+            aria-hidden="true"
+            width={24}
+            height={24}
+            className="h-6 w-6"
+          />
           Forward Deployed Agency · Raid Guild
         </span>
         <span className="font-mono text-xs text-muted-foreground/50">
