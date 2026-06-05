@@ -11,7 +11,7 @@ const EmbeddedSection = () => (
         <AnimatedSection>
           <p className="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-4">How We Work</p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold leading-tight mb-6">
-            We don't hand you software.{" "}
+            We don&apos;t hand you software.{" "}
             <span className="text-primary text-glow-teal">We deploy a team.</span>
           </h2>
         </AnimatedSection>

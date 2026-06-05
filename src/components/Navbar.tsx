@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
-  const onOfferingsPage = location.pathname === "/offerings";
+  const pathname = usePathname();
+  const onOfferingsPage = pathname === "/offerings";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -22,12 +23,12 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="font-heading font-semibold text-lg tracking-tight text-accent">
+        <Link href="/" className="font-heading font-semibold text-lg tracking-tight text-accent">
           Raid Guild
         </Link>
         <div className="flex items-center gap-3">
           <Link
-            to="/offerings"
+            href="/offerings"
             className={`hidden font-mono text-xs uppercase tracking-[0.18em] transition-colors sm:inline ${
               onOfferingsPage
                 ? "text-primary"
