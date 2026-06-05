@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Raid Guild: AI Solutions Website
 
-TODO: Document your project here
+RaidGuild is a decentralized collective of forward deployed mercenaries ready to slay your digital demons.
