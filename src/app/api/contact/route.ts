@@ -6,7 +6,7 @@ import { contactApiSchema, type ContactApiData } from "@/lib/validation";
 export const runtime = "nodejs";
 
 const DISCORD_MESSAGE_LIMIT = 2000;
-const CONTACT_SOURCE = "system-weaver-contact";
+const CONTACT_SOURCE = "raidguild-ai-solutions-contact";
 
 type ContactSummary = ContactApiData & {
   source: typeof CONTACT_SOURCE;
