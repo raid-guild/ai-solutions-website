@@ -43,7 +43,7 @@ const createSummary = (contactData: ContactApiData): ContactSummary => ({
 
 const formatDiscordMessage = (summary: ContactSummary) => {
   const sections = [
-    "**New System Weaver contact request**",
+    "**New RaidGuild AI Solutions contact request**",
     `**Source:** ${summary.source}`,
     `**Email:** ${summary.email}`,
     `**Automation needs:**\n${summary.automationNeeds}`,
@@ -54,7 +54,7 @@ const formatDiscordMessage = (summary: ContactSummary) => {
 
 const formatEmail = (summary: ContactSummary) => {
   const text = [
-    "New System Weaver contact request",
+    "New RaidGuild AI Solutions contact request",
     "",
     `Source: ${summary.source}`,
     `Email: ${summary.email}`,
@@ -64,7 +64,7 @@ const formatEmail = (summary: ContactSummary) => {
   ].join("\n");
 
   const html = `
-    <h1>New System Weaver contact request</h1>
+    <h1>New RaidGuild AI Solutions contact request</h1>
     <p><strong>Source:</strong> ${escapeHtml(summary.source)}</p>
     <p><strong>Email:</strong> ${escapeHtml(summary.email)}</p>
     <h2>Automation needs</h2>
@@ -119,7 +119,7 @@ const sendContactEmail = async (summary: ContactSummary) => {
     to: recipients,
     from,
     replyTo: summary.email,
-    subject: "New System Weaver contact request",
+    subject: "New RaidGuild AI Solutions contact request",
     text,
     html,
   });

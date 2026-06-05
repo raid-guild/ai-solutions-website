@@ -14,22 +14,22 @@ Use language from systems, networks, threads, nodes, operational stacks, maps, a
 
 Colors are defined in `src/index.css` as HSL tokens.
 
-| Role | Token | HSL | Approx Hex | Use |
-| --- | --- | --- | --- | --- |
-| Background | `--background` | `240 20% 3%` | `#060609` | Page background, deep canvas |
-| Foreground | `--foreground` | `30 10% 90%` | `#e8e5e1` | Primary text |
-| Card | `--card` | `240 15% 6%` | `#0d0d12` | Panels, diagrams, contained modules |
-| Muted | `--muted` | `240 10% 12%` | `#1b1b22` | Subtle surfaces |
-| Border | `--border` | `240 10% 14%` | `#202027` | Thin dividers, card edges |
-| Muted text | `--muted-foreground` | `220 10% 50%` | `#73798c` | Secondary copy |
-| Primary teal | `--primary` | `160 63% 50%` | `#2fd09a` | System activation, connections, primary CTAs |
-| Accent magenta | `--accent` / `--secondary` | `347 100% 61%` | `#ff3863` | Raid Guild brand accent, contrast calls |
-| Violet glow | utility only | `263 76% 66%` | `#b866ea` | Occasional atmospheric/heritage glow |
+| Role           | Token                      | HSL            | Approx Hex | Use                                          |
+| -------------- | -------------------------- | -------------- | ---------- | -------------------------------------------- |
+| Background     | `--background`             | `240 20% 3%`   | `#060609`  | Page background, deep canvas                 |
+| Foreground     | `--foreground`             | `30 10% 90%`   | `#e8e5e1`  | Primary text                                 |
+| Card           | `--card`                   | `240 15% 6%`   | `#0d0d12`  | Panels, diagrams, contained modules          |
+| Muted          | `--muted`                  | `240 10% 12%`  | `#1b1b22`  | Subtle surfaces                              |
+| Border         | `--border`                 | `240 10% 14%`  | `#202027`  | Thin dividers, card edges                    |
+| Muted text     | `--muted-foreground`       | `220 10% 50%`  | `#73798c`  | Secondary copy                               |
+| Primary teal   | `--primary`                | `160 63% 50%`  | `#2fd09a`  | System activation, connections, primary CTAs |
+| Accent magenta | `--accent` / `--secondary` | `347 100% 61%` | `#ff3863`  | RaidGuild brand accent, contrast calls       |
+| Violet glow    | utility only               | `263 76% 66%`  | `#b866ea`  | Occasional atmospheric/heritage glow         |
 
 ### Color Usage
 
 - Teal is the main operational color: active states, agent nodes, connection lines, primary emphasis.
-- Magenta is the brand/energy accent: Raid Guild references, secondary CTAs, contrast details.
+- Magenta is the brand/energy accent: RaidGuild references, secondary CTAs, contrast details.
 - Violet is a supporting glow/sigil color, not a main product color.
 - Keep the app mostly near-black, off-white, muted blue-gray, and thin neon accents.
 - Use glow sparingly: `text-shadow` and `box-shadow` should feel like signal, not decoration.
@@ -38,11 +38,11 @@ Colors are defined in `src/index.css` as HSL tokens.
 
 The Tailwind config defines three font families:
 
-| Role | Font | Use |
-| --- | --- | --- |
-| Heading | Space Grotesk | Headlines, section titles, card titles, buttons |
-| Body | Inter | Paragraph copy and general UI text |
-| Mono | JetBrains Mono | Labels, steps, tags, diagnostics, workflow metadata |
+| Role    | Font           | Use                                                 |
+| ------- | -------------- | --------------------------------------------------- |
+| Heading | Space Grotesk  | Headlines, section titles, card titles, buttons     |
+| Body    | Inter          | Paragraph copy and general UI text                  |
+| Mono    | JetBrains Mono | Labels, steps, tags, diagnostics, workflow metadata |
 
 ### Type Direction
 
@@ -71,7 +71,7 @@ Assets should build around these motifs:
 - Threads and weaving: horizontal/vertical connector lines, dashed paths, subtle meshes.
 - Operational maps: workflows, stacks, dependencies, checkpoints, handoffs.
 - Deployment paths: step sequences, timelines, progression ladders.
-- Sigils/geometric marks: faint Raid Guild heritage geometry using magenta/violet/teal.
+- Sigils/geometric marks: faint RaidGuild heritage geometry using magenta/violet/teal.
 - Noise texture: very subtle monochrome grain over the dark background.
 
 ## Motion Direction
@@ -102,7 +102,7 @@ Avoid:
 - Large glossy 3D objects.
 - Heavy gradients or one-color purple/blue atmospheres.
 - Photography that feels like generic office/team stock.
-- Overly magical fantasy styling, despite the Raid Guild name.
+- Overly magical fantasy styling, despite the RaidGuild name.
 
 ## Composition Notes
 
@@ -110,9 +110,9 @@ Avoid:
 - Use negative space heavily.
 - Prefer thin-line technical detail over dense decorative fills.
 - Let teal identify the active or transformed state.
-- Let magenta/violet identify Raid Guild origin, contrast, or secondary emphasis.
+- Let magenta/violet identify RaidGuild origin, contrast, or secondary emphasis.
 - Diagrams should be legible at large screen sizes and still read as texture when scaled down.
 
 ## Current Look Summary
 
-System Weaver is a dark, technical, neon-accented operating-system aesthetic for embedded AI capability. It should feel senior, precise, deployable, and a little arcane around the edges, with Raid Guild energy expressed through restrained magenta/violet geometry rather than fantasy illustration.
+System Weaver is a dark, technical, neon-accented operating-system aesthetic for embedded AI capability. It should feel senior, precise, deployable, and a little arcane around the edges, with RaidGuild energy expressed through restrained magenta/violet geometry rather than fantasy illustration.

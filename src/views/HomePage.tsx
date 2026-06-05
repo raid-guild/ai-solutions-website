@@ -32,7 +32,7 @@ const Index = ({ mediaPosts }: { mediaPosts: MediaPost[] }) => (
             height={24}
             className="h-6 w-6"
           />
-          Forward Deployed AI Mercenaries · Raid Guild
+          Forward Deployed AI Mercenaries · RaidGuild
         </span>
         <span className="font-mono text-xs text-muted-foreground/50">
           Digital demons slain with context, agents, and operated outcomes.

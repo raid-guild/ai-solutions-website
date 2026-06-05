@@ -36,7 +36,7 @@ const ContactPage = () => (
         <div className="relative mx-auto grid max-w-7xl items-start gap-12 px-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-primary">
-              System Weaver Contact
+              RaidGuild AI Solutions Contact
             </p>
             <h1 className="mb-6 max-w-3xl font-heading text-4xl font-bold leading-[1.08] tracking-tight md:text-5xl lg:text-6xl">
               Bring us the bottleneck.{" "}

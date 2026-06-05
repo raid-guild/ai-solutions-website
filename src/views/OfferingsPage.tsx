@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Check, CircleDot, Layers, Waypoints } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -10,7 +11,6 @@ import { Button } from "@/components/ui/button";
 type Offering = {
   tier: string;
   title: string;
-  price: string;
   outcome: string;
   summary: string;
   includes: string[];
@@ -22,7 +22,6 @@ const offerings: Offering[] = [
   {
     tier: "Entry Sprint",
     title: "Operational Leverage Sprint",
-    price: "$3k-$7k",
     outcome:
       "You get one painful operational bottleneck turned into a working AI-assisted workflow.",
     summary:
@@ -39,7 +38,6 @@ const offerings: Offering[] = [
   {
     tier: "Diagnostic + Build",
     title: "AI Readiness Diagnostic + Build",
-    price: "$8k-$15k",
     outcome:
       "You get a clear AI operations roadmap plus one deployed workflow your team can actually use.",
     summary:
@@ -57,11 +55,10 @@ const offerings: Offering[] = [
   {
     tier: "Deployment",
     title: "Refactory Deployment Package",
-    price: "$10k-$25k",
     outcome:
       "You get a customized operating system for coordination, automation, and AI-native process management.",
     summary:
-      "Refactory is Raid Guild's internally incubated workflow automation and operational tooling system, adapted to the way your organization works.",
+      "Refactory is RaidGuild's internally incubated workflow automation and operational tooling system, adapted to the way your organization works.",
     includes: [
       "Workflow integration",
       "Operational automation setup",
@@ -75,7 +72,6 @@ const offerings: Offering[] = [
   {
     tier: "Knowledge Systems",
     title: "Internal Copilot Deployment",
-    price: "$6k-$18k",
     outcome:
       "You get an internal assistant that helps your team find answers, follow SOPs, and stop losing knowledge.",
     summary:
@@ -93,7 +89,6 @@ const offerings: Offering[] = [
   {
     tier: "Focused Fix",
     title: "Workflow Rescue Package",
-    price: "$4k-$12k",
     outcome:
       "You get one recurring workflow cleaned up, automated, and documented so it stops draining the team every week.",
     summary:
@@ -131,7 +126,11 @@ const Offerings = () => (
     <main className="relative z-10">
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
         <div className="absolute inset-0 opacity-[0.07]">
-          <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <svg
+            className="h-full w-full"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
             <motion.path
               d="M8 74 C28 28, 49 76, 69 35 S91 39, 96 18"
               fill="none"
@@ -194,7 +193,9 @@ const Offerings = () => (
           >
             <div className="mb-6 flex items-center gap-3">
               <Waypoints className="h-5 w-5 text-primary" aria-hidden="true" />
-              <h2 className="font-heading text-lg font-semibold">Progression Path</h2>
+              <h2 className="font-heading text-lg font-semibold">
+                Progression Path
+              </h2>
             </div>
             <div className="space-y-5">
               {pathSteps.map((step, index) => (
@@ -231,8 +232,8 @@ const Offerings = () => (
               </h2>
             </div>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-              Each track produces a usable operational asset, not a strategy deck
-              that waits for someone else to implement it.
+              Each track produces a usable operational asset, not a strategy
+              deck that waits for someone else to implement it.
             </p>
           </AnimatedSection>
 
@@ -245,9 +246,7 @@ const Offerings = () => (
               >
                 <motion.article
                   className={`h-full border bg-card/50 p-6 backdrop-blur-sm transition-colors ${
-                    index === 0
-                      ? "border-primary/40"
-                      : "border-border"
+                    index === 0 ? "border-primary/40" : "border-border"
                   }`}
                   whileHover={{
                     borderColor:
@@ -261,7 +260,10 @@ const Offerings = () => (
                   <div className="mb-5 flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
                     <div>
                       <div className="mb-3 flex items-center gap-3">
-                        <CircleDot className="h-4 w-4 text-primary" aria-hidden="true" />
+                        <CircleDot
+                          className="h-4 w-4 text-primary"
+                          aria-hidden="true"
+                        />
                         <p className="font-mono text-xs uppercase tracking-[0.18em] text-primary">
                           {offering.tier}
                         </p>
@@ -269,9 +271,6 @@ const Offerings = () => (
                       <p className="font-heading text-sm uppercase tracking-wider text-muted-foreground">
                         {offering.title}
                       </p>
-                    </div>
-                    <div className="border border-border bg-background/60 px-3 py-2 font-mono text-sm text-foreground">
-                      {offering.price}
                     </div>
                   </div>
 
@@ -286,15 +285,24 @@ const Offerings = () => (
                   <div className="grid gap-6 md:grid-cols-[1fr_0.85fr]">
                     <div>
                       <div className="mb-3 flex items-center gap-2">
-                        <Layers className="h-4 w-4 text-accent" aria-hidden="true" />
+                        <Layers
+                          className="h-4 w-4 text-accent"
+                          aria-hidden="true"
+                        />
                         <h4 className="font-heading text-sm font-semibold uppercase tracking-wider">
                           Includes
                         </h4>
                       </div>
                       <div className="grid gap-2 sm:grid-cols-2">
                         {offering.includes.map((item) => (
-                          <div key={item} className="flex gap-2 text-sm text-muted-foreground">
-                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                          <div
+                            key={item}
+                            className="flex gap-2 text-sm text-muted-foreground"
+                          >
+                            <Check
+                              className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+                              aria-hidden="true"
+                            />
                             <span>{item}</span>
                           </div>
                         ))}
@@ -356,16 +364,15 @@ const Offerings = () => (
               larger AI-native operations stack.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="rounded-sm px-8 font-heading text-sm uppercase tracking-wider">
-                Deploy the Agency
-                <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-              </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="rounded-sm border-primary/30 px-8 font-heading text-sm uppercase tracking-wider text-primary hover:bg-primary/10"
+                className="rounded-sm px-8 font-heading text-sm uppercase tracking-wider"
+                asChild
               >
-                Start with a Sprint
+                <Link href="/contact">
+                  Deploy the Agency
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                </Link>
               </Button>
             </div>
           </AnimatedSection>
@@ -384,7 +391,7 @@ const Offerings = () => (
             height={24}
             className="h-6 w-6"
           />
-          Forward Deployed Agency · Raid Guild
+          Forward Deployed Agency · RaidGuild
         </span>
         <span className="font-mono text-xs text-muted-foreground/50">
           AI-native operations packages.

@@ -42,18 +42,29 @@ const Navbar = () => {
             height={28}
             className="h-7 w-7"
           />
-          <span>Raid Guild AI</span>
+          <span>RaidGuild AI</span>
         </Link>
         <div className="flex items-center gap-3">
-          {anchorLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`${link.className} font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground`}
-            >
-              {link.label}
-            </Link>
+          {anchorLinks.map((link, index) => (
+            <div key={link.href} className="contents">
+              {index > 0 && (
+                <span
+                  className="hidden h-1 w-1 rounded-full bg-primary/80 lg:inline-block"
+                  aria-hidden="true"
+                />
+              )}
+              <Link
+                href={link.href}
+                className={`${link.className} font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground`}
+              >
+                {link.label}
+              </Link>
+            </div>
           ))}
+          <span
+            className="hidden h-1 w-1 rounded-full bg-primary/80 md:inline-block"
+            aria-hidden="true"
+          />
           <Link
             href="/offerings"
             className={`hidden font-mono text-xs uppercase tracking-[0.18em] transition-colors sm:inline ${
@@ -64,6 +75,10 @@ const Navbar = () => {
           >
             Offerings
           </Link>
+          <span
+            className="hidden h-1 w-1 rounded-full bg-primary/80 md:inline-block"
+            aria-hidden="true"
+          />
           <Link
             href="https://www.raidguild.org/"
             target="_blank"
