@@ -36,7 +36,11 @@ const models = [
 const FinalCTASection = () => (
   <section className="relative py-32 overflow-hidden">
     {/* Woven mesh background */}
-    <svg className="absolute inset-0 w-full h-full opacity-[0.08]" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <svg
+      className="absolute inset-0 w-full h-full opacity-[0.08]"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
+    >
       {meshNodes.map((node, i) =>
         meshNodes.slice(i + 1).map((other, j) => {
           const dist = Math.hypot(node.x - other.x, node.y - other.y);
@@ -58,7 +62,7 @@ const FinalCTASection = () => (
               }}
             />
           );
-        })
+        }),
       )}
     </svg>
 
@@ -71,7 +75,9 @@ const FinalCTASection = () => (
       <AnimatedSection>
         <h2 className="mx-auto max-w-3xl text-center font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
           Bring us a business bottleneck.{" "}
-          <span className="text-primary text-glow-teal">We&apos;ll deploy the team to unlock it.</span>
+          <span className="text-primary text-glow-teal">
+            We&apos;ll deploy the team to unlock it.
+          </span>
         </h2>
       </AnimatedSection>
 
@@ -119,7 +125,7 @@ const FinalCTASection = () => (
             className="rounded-sm font-heading tracking-wider uppercase text-sm px-10 border-accent/40 text-accent hover:bg-accent/10"
             asChild
           >
-            <Link href="/offerings">Start the Audit</Link>
+            <Link href="/offerings">View Offerings</Link>
           </Button>
         </div>
       </AnimatedSection>

@@ -18,7 +18,7 @@ Description: Request a lightweight consultation for AI-native operations, workfl
 
 ## Navigation
 
-Site name: Raid Guild AI
+Site name: RaidGuild AI
 
 Nav links:
 
@@ -173,7 +173,7 @@ Buttons:
 
 ### Home Footer
 
-Left: Forward Deployed AI Mercenaries · Raid Guild
+Left: Forward Deployed AI Mercenaries · RaidGuild
 
 Right: Digital demons slain with context, agents, and operated outcomes.
 
@@ -256,7 +256,7 @@ Price: $10k-$25k
 
 Outcome: You get a customized operating system for coordination, automation, and AI-native process management.
 
-Summary: Refactory is Raid Guild's internally incubated workflow automation and operational tooling system, adapted to the way your organization works.
+Summary: Refactory is RaidGuild's internally incubated workflow automation and operational tooling system, adapted to the way your organization works.
 
 Includes:
 
@@ -332,7 +332,7 @@ Buttons:
 
 ### Offerings Footer
 
-Left: Forward Deployed Agency · Raid Guild
+Left: Forward Deployed Agency · RaidGuild
 
 Right: AI-native operations packages.
 
@@ -390,4 +390,3 @@ Headline: 404
 Body: Oops! Page not found
 
 Link: Return to Home
-
