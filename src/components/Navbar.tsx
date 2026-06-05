@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const anchorLinks = [
+  { href: "/#projects", label: "Projects", className: "hidden md:inline" },
+];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -24,9 +29,18 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="font-heading font-semibold text-lg tracking-tight text-accent">
-          Raid Guild
+          Raid Guild AI
         </Link>
         <div className="flex items-center gap-3">
+          {anchorLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`${link.className} font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground`}
+            >
+              {link.label}
+            </Link>
+          ))}
           <Link
             href="/offerings"
             className={`hidden font-mono text-xs uppercase tracking-[0.18em] transition-colors sm:inline ${
@@ -37,11 +51,21 @@ const Navbar = () => {
           >
             Offerings
           </Link>
+          <Link
+            href="https://www.raidguild.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden items-center gap-1 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground md:inline-flex"
+          >
+            Web3 Solutions
+            <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
+          </Link>
           <Button
             size="sm"
             className="rounded-sm font-heading text-xs tracking-wider uppercase"
+            asChild
           >
-            Deploy the Agency
+            <Link href="/contact">Deploy the Agency</Link>
           </Button>
         </div>
       </div>
