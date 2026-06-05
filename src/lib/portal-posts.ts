@@ -42,7 +42,9 @@ const absolutePortalUrl = (path?: string | null) => {
 };
 
 const formatDate = (date: string) => {
-  if (!date) return "Latest";
+  if (date === undefined || date === null || date.trim() === "") {
+    return "Latest";
+  }
 
   const timestamp = Date.parse(date);
   if (Number.isNaN(timestamp)) return "Latest";
@@ -55,6 +57,9 @@ const formatDate = (date: string) => {
   }).format(new Date(timestamp));
 };
 
+/**
+ * Fetches public Portal posts and normalizes them for the homepage media cards.
+ */
 export async function getPortalPosts({
   limit = 3,
   categoryId,
@@ -77,11 +82,26 @@ export async function getPortalPosts({
       next: { revalidate: 60 * 15 },
     });
 
-    if (!response.ok) return [];
+    if (!response.ok) {
+      let body = "";
+      try {
+        body = await response.text();
+      } catch {
+        body = "Unable to read response body.";
+      }
+
+      console.error(
+        `Failed to fetch portal posts: ${response.status} ${response.statusText}`,
+        { url: url.toString(), body },
+      );
+      return [];
+    }
 
     const data = (await response.json()) as PortalPostResponse;
 
-    return (data.docs || []).map((post) => {
+    return (data.docs || []).flatMap((post) => {
+      if (!post.slug) return [];
+
       const image = post.meta?.image;
       const imageUrl =
         absolutePortalUrl(image?.sizes?.medium?.url) ||
@@ -101,7 +121,8 @@ export async function getPortalPosts({
         imageUrl,
       };
     });
-  } catch {
+  } catch (error) {
+    console.error("Failed to fetch portal posts.", error);
     return [];
   }
 }
