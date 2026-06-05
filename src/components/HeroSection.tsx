@@ -44,9 +44,9 @@ const HeroSection = () => (
           transition={{ delay: 0.3, duration: 0.8 }}
           className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6"
         >
-          Slay your digital demons with{" "}
+          AI operators for messy workflows, fragmented knowledge, and{" "}
           <span className="text-primary text-glow-teal">
-            agentic systems.
+            coordination debt.
           </span>
         </motion.h1>
         <motion.p
@@ -55,9 +55,10 @@ const HeroSection = () => (
           transition={{ delay: 0.5, duration: 0.7 }}
           className="text-lg text-muted-foreground max-w-lg mb-8 leading-relaxed"
         >
-          RaidGuild AI is a collective of builders, operators, and agent
-          specialists ready to embed with your team, wire into your context, and
-          ship automation that survives contact with reality.
+          RaidGuild AI embeds builders and operators into your stack to design,
+          ship, and maintain practical AI workflows: internal copilots, workflow
+          automation, knowledge systems, and agent-assisted operations that
+          survive real-world use.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -66,9 +67,9 @@ const HeroSection = () => (
           className="space-y-3 mb-10"
         >
           {[
-            "Mercenary teams, not software handoffs",
-            "Agents built inside your systems and workflows",
-            "Context, comms, and operations woven together",
+            "One painful workflow turned into a working system",
+            "Agents connected to your docs, comms, tools, and APIs",
+            "Human checkpoints, evaluations, and ongoing operational support",
           ].map((point) => (
             <div key={point} className="flex items-center gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -89,7 +90,7 @@ const HeroSection = () => (
             className="rounded-sm font-heading tracking-wider uppercase text-sm px-8"
             asChild
           >
-            <Link href="/contact">Deploy the Agency</Link>
+            <Link href="/contact">Book an AI Ops Audit</Link>
           </Button>
           <Button
             size="lg"
@@ -97,7 +98,7 @@ const HeroSection = () => (
             className="rounded-sm font-heading tracking-wider uppercase text-sm px-8 border-primary/30 text-primary hover:bg-primary/10"
             asChild
           >
-            <Link href="/offerings">View Offerings</Link>
+            <Link href="/offerings">View Service Packages</Link>
           </Button>
         </motion.div>
       </div>
