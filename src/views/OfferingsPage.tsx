@@ -20,85 +20,18 @@ type Offering = {
 
 const offerings: Offering[] = [
   {
-    tier: "Entry Sprint",
+    tier: "Focused Workflow",
     title: "Operational Leverage Sprint",
     outcome:
-      "You get one painful operational bottleneck turned into a working AI-assisted workflow.",
+      "You get your biggest workflow improvement opportunities identified, then one painful workflow turned into a working AI-assisted system.",
     summary:
-      "A focused 1-2 week engagement for teams that want practical proof of AI leverage before making a larger commitment.",
+      "A focused engagement for teams that want practical proof of AI leverage before making a larger commitment.",
     includes: [
       "Workflow mapping",
-      "Bottleneck identification",
-      "1 implemented automation or AI workflow",
+      "Identification of the highest-leverage improvement opportunities",
+      "1-off workflow rescue",
+      "1 implemented automation or AI-assisted workflow",
       "Recommendations for future leverage opportunities",
-    ],
-    bestFor:
-      "Teams that want proof of practical AI leverage before committing to a larger operational build.",
-  },
-  {
-    tier: "Diagnostic + Build",
-    title: "AI Readiness Diagnostic + Build",
-    outcome:
-      "You get a clear AI operations roadmap plus one deployed workflow your team can actually use.",
-    summary:
-      "A hybrid assessment and implementation package for organizations ready to move from AI experiments into operational systems.",
-    includes: [
-      "Operational systems assessment",
-      "AI opportunity mapping",
-      "Tooling + workflow analysis",
-      "1 deployed AI-native workflow or integration",
-      "Roadmap for operational AI adoption",
-    ],
-    bestFor:
-      "Organizations drowning in disconnected tools and unclear AI direction.",
-  },
-  {
-    tier: "Deployment",
-    title: "Refactory Deployment Package",
-    outcome:
-      "You get a customized operating system for coordination, automation, and AI-native process management.",
-    summary:
-      "Refactory is RaidGuild's internally incubated workflow automation and operational tooling system, adapted to the way your organization works.",
-    includes: [
-      "Workflow integration",
-      "Operational automation setup",
-      "Internal tooling deployment",
-      "AI-assisted operational workflows",
-      "Onboarding and implementation support",
-    ],
-    bestFor:
-      "Teams looking to operationalize coordination, workflows, and AI-native process management.",
-  },
-  {
-    tier: "Knowledge Systems",
-    title: "Internal Copilot Deployment",
-    outcome:
-      "You get an internal assistant that helps your team find answers, follow SOPs, and stop losing knowledge.",
-    summary:
-      "An AI-powered internal assistant connected to your company knowledge, documentation, SOPs, and operational systems.",
-    includes: [
-      "Internal knowledge ingestion",
-      "Slack/Discord/chat integration",
-      "Searchable organizational memory",
-      "Onboarding and support assistant workflows",
-      "Operational Q&A systems",
-    ],
-    bestFor:
-      "Remote teams, growing organizations, and operations-heavy companies struggling with knowledge fragmentation.",
-  },
-  {
-    tier: "Focused Fix",
-    title: "Workflow Rescue Package",
-    outcome:
-      "You get one recurring workflow cleaned up, automated, and documented so it stops draining the team every week.",
-    summary:
-      "A focused implementation for teams that already know where work is getting stuck and want it fixed.",
-    includes: [
-      "Workflow analysis",
-      "Automation implementation",
-      "System integrations",
-      "AI-assisted operational tooling",
-      "Team walkthrough and documentation",
     ],
     examples: [
       "Customer intake",
@@ -109,14 +42,31 @@ const offerings: Offering[] = [
       "Follow-up flows",
     ],
     bestFor:
-      "Small businesses and lean teams overwhelmed by repetitive operational work.",
+      "Teams that know operations are leaking time and want one concrete workflow fixed first.",
+  },
+  {
+    tier: "Retainer",
+    title: "Embedded Team",
+    outcome:
+      "You get an embedded AI operations team on retainer to keep building, deploying, and supporting workflow systems inside your organization.",
+    summary:
+      "A continued partnership for organizations ready to move from one-off workflow fixes into an AI-native operating layer.",
+    includes: [
+      "Retainer model for continued work",
+      "Full Refactory Deployment Package",
+      "AI readiness roadmap",
+      "Ongoing workflow implementations",
+      "Support, iteration, and operational enablement",
+    ],
+    bestFor:
+      "Teams that want a durable implementation partner for AI readiness, Refactory deployment, and ongoing operational improvements.",
   },
 ];
 
 const pathSteps = [
-  "Find leverage",
-  "Deploy one working system",
-  "Compound into operational AI",
+  "Find the leverage",
+  "Fix one workflow",
+  "Keep building with an embedded team",
 ];
 
 const Offerings = () => (
@@ -228,12 +178,12 @@ const Offerings = () => (
                 Service Tracks
               </p>
               <h2 className="font-heading text-3xl font-bold md:text-4xl">
-                Practical packages with room to grow
+                Start focused, or bring us in deeper
               </h2>
             </div>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-              Each track produces a usable operational asset, not a strategy
-              deck that waits for someone else to implement it.
+              Both tracks produce usable operational assets, not strategy decks
+              that wait for someone else to implement them.
             </p>
           </AnimatedSection>
 
@@ -242,7 +192,6 @@ const Offerings = () => (
               <AnimatedSection
                 key={offering.title}
                 delay={index * 0.06}
-                className={index === 0 ? "lg:col-span-2" : ""}
               >
                 <motion.article
                   className={`h-full border bg-card/50 p-6 backdrop-blur-sm transition-colors ${
@@ -353,15 +302,15 @@ const Offerings = () => (
         <div className="mx-auto max-w-4xl px-6 text-center">
           <AnimatedSection>
             <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-primary">
-              Start Where It Hurts
+              Not Sure Yet?
             </p>
             <h2 className="mb-6 font-heading text-3xl font-bold leading-tight md:text-4xl">
-              Bring the workflow that keeps stealing time. We will turn it into
-              a working operational system.
+              If you do not know which offering fits, bring us the messy
+              version. We will help you find the right shape.
             </h2>
             <p className="mx-auto mb-10 max-w-2xl text-muted-foreground">
-              The first package can stay small, or become the foundation for a
-              larger AI-native operations stack.
+              Tell us what is slowing the team down, what you are trying to
+              build, or where AI feels useful but unclear.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
@@ -369,8 +318,8 @@ const Offerings = () => (
                 className="rounded-sm px-8 font-heading text-sm uppercase tracking-wider"
                 asChild
               >
-                <Link href="/contact">
-                  Deploy the Agency
+                <Link href="https://ai.raidguild.org/contact">
+                  Reach Out
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
