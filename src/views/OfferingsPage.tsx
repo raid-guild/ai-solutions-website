@@ -189,10 +189,7 @@ const Offerings = () => (
 
           <div className="grid gap-4 lg:grid-cols-2">
             {offerings.map((offering, index) => (
-              <AnimatedSection
-                key={offering.title}
-                delay={index * 0.06}
-              >
+              <AnimatedSection key={offering.title} delay={index * 0.06}>
                 <motion.article
                   className={`h-full border bg-card/50 p-6 backdrop-blur-sm transition-colors ${
                     index === 0 ? "border-primary/40" : "border-border"
@@ -302,16 +299,12 @@ const Offerings = () => (
         <div className="mx-auto max-w-4xl px-6 text-center">
           <AnimatedSection>
             <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-primary">
-              Not Sure Yet?
+              Schedule Consultation
             </p>
             <h2 className="mb-6 font-heading text-3xl font-bold leading-tight md:text-4xl">
-              If you do not know which offering fits, bring us the messy
-              version. We will help you find the right shape.
-            </h2>
-            <p className="mx-auto mb-10 max-w-2xl text-muted-foreground">
               Tell us what is slowing the team down, what you are trying to
               build, or where AI feels useful but unclear.
-            </p>
+            </h2>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 size="lg"
