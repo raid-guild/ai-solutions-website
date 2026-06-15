@@ -7,6 +7,9 @@ export const runtime = "nodejs";
 
 const DISCORD_MESSAGE_LIMIT = 2000;
 const CONTACT_SOURCE = "raidguild-ai-solutions-contact";
+const MIN_FORM_ELAPSED_MS = 3000;
+const MAX_FORM_ELAPSED_MS = 24 * 60 * 60 * 1000;
+const FUTURE_FORM_TOLERANCE_MS = 60 * 1000;
 
 type ContactSummary = ContactApiData & {
   source: typeof CONTACT_SOURCE;
@@ -37,9 +40,30 @@ const escapeHtml = (value: string) =>
     .replaceAll("'", "&#39;");
 
 const createSummary = (contactData: ContactApiData): ContactSummary => ({
-  ...contactData,
+  email: contactData.email,
+  automationNeeds: contactData.automationNeeds,
   source: CONTACT_SOURCE,
 });
+
+const createSpamAcceptedResponse = () =>
+  NextResponse.json(
+    {
+      success: true,
+      message: "Contact request submitted successfully",
+    },
+    { status: 200 },
+  );
+
+const isSuspiciousSubmissionTime = (formStarted: number) => {
+  const now = Date.now();
+  const elapsed = now - formStarted;
+
+  return (
+    elapsed < MIN_FORM_ELAPSED_MS ||
+    elapsed > MAX_FORM_ELAPSED_MS ||
+    formStarted > now + FUTURE_FORM_TOLERANCE_MS
+  );
+};
 
 const formatDiscordMessage = (summary: ContactSummary) => {
   const sections = [
@@ -128,6 +152,12 @@ const sendContactEmail = async (summary: ContactSummary) => {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
+
+    if (typeof body?.website === "string" && body.website.trim()) {
+      console.warn("Blocked contact form honeypot submission");
+      return createSpamAcceptedResponse();
+    }
+
     const validationResult = contactApiSchema.safeParse(body);
 
     if (!validationResult.success) {
@@ -144,6 +174,11 @@ export async function POST(request: NextRequest) {
         },
         { status: 400 },
       );
+    }
+
+    if (isSuspiciousSubmissionTime(validationResult.data.formStarted)) {
+      console.warn("Blocked contact form timing submission");
+      return createSpamAcceptedResponse();
     }
 
     const summary = createSummary(validationResult.data);

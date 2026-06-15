@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Send } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -34,6 +34,13 @@ const requiredMarker = (
   </span>
 );
 
+const getDefaultValues = (): ContactFormData => ({
+  email: "",
+  automationNeeds: "",
+  website: "",
+  formStarted: Date.now(),
+});
+
 export default function ContactForm({
   apiEndpoint = "/api/contact",
   title = "Start the conversation",
@@ -42,6 +49,7 @@ export default function ContactForm({
   successTitle = "Request received",
   successMessage = "Your request is in, and a member of the Guild will follow up by email.",
 }: ContactFormProps) {
+  const defaultValues = useRef<ContactFormData>(getDefaultValues());
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] =
     useState<SubmissionStatus>("idle");
@@ -49,10 +57,7 @@ export default function ContactForm({
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      email: "",
-      automationNeeds: "",
-    },
+    defaultValues: defaultValues.current,
   });
 
   const handleSubmit = async (formData: ContactFormData) => {
@@ -82,7 +87,7 @@ export default function ContactForm({
       }
 
       setSubmissionStatus("success");
-      form.reset();
+      form.reset(getDefaultValues());
     } catch (error) {
       console.error("Error submitting contact request:", error);
       setSubmissionStatus("error");
@@ -110,6 +115,16 @@ export default function ContactForm({
 
       <Form {...form}>
         <form className="space-y-5" onSubmit={form.handleSubmit(handleSubmit)}>
+          <input
+            aria-hidden="true"
+            autoComplete="off"
+            className="hidden"
+            tabIndex={-1}
+            type="text"
+            {...form.register("website")}
+          />
+          <input type="hidden" {...form.register("formStarted")} />
+
           <FormField
             control={form.control}
             name="email"

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const contactFormSchema = z.object({
+const contactFieldsSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address.",
   }),
@@ -9,7 +9,12 @@ export const contactFormSchema = z.object({
   }),
 });
 
+export const contactFormSchema = contactFieldsSchema.extend({
+  website: z.string().optional(),
+  formStarted: z.coerce.number(),
+});
+
 export const contactApiSchema = contactFormSchema;
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;
-export type ContactApiData = z.infer<typeof contactApiSchema>;
+export type ContactApiData = z.infer<typeof contactFieldsSchema>;
