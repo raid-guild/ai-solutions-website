@@ -4,18 +4,40 @@ import AnimatedSection from "./AnimatedSection";
 const RaidGuildSection = () => (
   <section id="origins" className="relative scroll-mt-20 py-32 overflow-hidden">
     {/* Sigil background */}
-    <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 400 400">
-      <polygon points="200,40 360,150 310,340 90,340 40,150" fill="none" stroke="hsl(263 76% 66%)" strokeWidth="1" />
-      <polygon points="200,80 320,165 285,310 115,310 80,165" fill="none" stroke="hsl(160 63% 50%)" strokeWidth="0.5" />
-      <circle cx="200" cy="200" r="80" fill="none" stroke="hsl(263 76% 66%)" strokeWidth="0.5" />
+    <svg
+      className="absolute inset-0 w-full h-full opacity-[0.03]"
+      viewBox="0 0 400 400"
+    >
+      <polygon
+        points="200,40 360,150 310,340 90,340 40,150"
+        fill="none"
+        stroke="hsl(263 76% 66%)"
+        strokeWidth="1"
+      />
+      <polygon
+        points="200,80 320,165 285,310 115,310 80,165"
+        fill="none"
+        stroke="hsl(160 63% 50%)"
+        strokeWidth="0.5"
+      />
+      <circle
+        cx="200"
+        cy="200"
+        r="80"
+        fill="none"
+        stroke="hsl(263 76% 66%)"
+        strokeWidth="0.5"
+      />
     </svg>
 
     <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
       <AnimatedSection>
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-accent mb-4">Origins</p>
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-accent mb-4">
+          Origins
+        </p>
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
           RaidGuild, now deployed against{" "}
-          <span className="text-accent text-glow-violet">AI demons.</span>
+          <span className="text-accent text-glow-violet">digital demons.</span>
         </h2>
       </AnimatedSection>
 
