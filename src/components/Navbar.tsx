@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 
 const anchorLinks = [
   { href: "/#projects", label: "Projects", className: "hidden md:inline" },
-  { href: "/#media", label: "Media", className: "hidden lg:inline" },
 ];
 
 const Navbar = () => {
@@ -93,7 +92,7 @@ const Navbar = () => {
             className="rounded-sm font-heading text-xs tracking-wider uppercase"
             asChild
           >
-            <Link href="/contact">Deploy the Agency</Link>
+            <Link href="/contact">Contact Us</Link>
           </Button>
         </div>
       </div>

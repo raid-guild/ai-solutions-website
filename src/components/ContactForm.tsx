@@ -44,7 +44,7 @@ const getDefaultValues = (): ContactFormData => ({
 export default function ContactForm({
   apiEndpoint = "/api/contact",
   title = "Start the conversation",
-  description = "Tell us what operational drag you want to turn into a working system.",
+  description = "Tell us what operational drag you want to turn into a working system. We will use that context to scope the first audit or deployment path.",
   submitLabel = "Send request",
   successTitle = "Request received",
   successMessage = "Your request is in, and a member of the Guild will follow up by email.",

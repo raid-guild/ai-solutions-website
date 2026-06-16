@@ -48,10 +48,10 @@ const HeroSection = () => (
           transition={{ delay: 0.5, duration: 0.7 }}
           className="text-lg text-muted-foreground max-w-lg mb-8 leading-relaxed"
         >
-          RaidGuild AI embeds builders and operators into your stack to design,
-          ship, and maintain practical AI workflows: internal copilots, workflow
-          automation, knowledge systems, and agent-assisted operations that
-          survive real-world use.
+          RaidGuild AI embeds senior builders and operators into your workflows
+          to design, ship, and maintain practical AI systems: internal
+          copilots, workflow automation, knowledge infrastructure, and
+          agent-assisted operations built for real-world use.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}

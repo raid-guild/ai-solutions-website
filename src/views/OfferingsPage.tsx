@@ -20,18 +20,18 @@ type Offering = {
 
 const offerings: Offering[] = [
   {
-    tier: "Focused Workflow",
-    title: "Operational Leverage Sprint",
+    tier: "Assessment",
+    title: "AI Ops Audit",
     outcome:
-      "You get your biggest workflow improvement opportunities identified, then one painful workflow turned into a working AI-assisted system.",
+      "You get one priority workflow mapped, the highest-leverage automation opportunities identified, and a practical deployment plan.",
     summary:
-      "A focused engagement for teams that want practical proof of AI leverage before making a larger commitment.",
+      "A focused entry point for teams that know AI matters, but need clarity on where it should create operational leverage first.",
     includes: [
       "Workflow mapping",
-      "Identification of the highest-leverage improvement opportunities",
-      "1-off workflow rescue",
-      "1 implemented automation or AI-assisted workflow",
-      "Recommendations for future leverage opportunities",
+      "Opportunity sizing",
+      "System and data readiness review",
+      "Deployment recommendations",
+      "Prioritized next-step roadmap",
     ],
     examples: [
       "Customer intake",
@@ -42,11 +42,53 @@ const offerings: Offering[] = [
       "Follow-up flows",
     ],
     bestFor:
-      "Teams that know operations are leaking time and want one concrete workflow fixed first.",
+      "Teams that need an executive-grade read on where AI can safely create leverage before committing to implementation.",
+  },
+  {
+    tier: "Implementation",
+    title: "Workflow Deployment",
+    outcome:
+      "You get one painful workflow turned into a working AI-assisted system with the right integrations, checkpoints, and handoff.",
+    summary:
+      "A build engagement for teams ready to move from recommendation to a usable internal workflow.",
+    includes: [
+      "Workflow redesign",
+      "Agent or automation buildout",
+      "Tool and API integrations",
+      "Human review checkpoints",
+      "Launch support and documentation",
+    ],
+    examples: [
+      "Sales follow-up",
+      "Support triage",
+      "Internal reporting",
+      "Knowledge retrieval",
+      "Ops handoffs",
+      "Content workflows",
+    ],
+    bestFor:
+      "Teams that want practical proof of AI leverage through one concrete workflow shipped into real use.",
+  },
+  {
+    tier: "Ongoing Operations",
+    title: "Operating Partnership",
+    outcome:
+      "You get continued monitoring, evaluation, and optimization for AI workflows already operating inside the business.",
+    summary:
+      "A managed partnership for teams that need AI systems to keep improving as the business, tools, and requirements change.",
+    includes: [
+      "Workflow monitoring",
+      "Evaluation and quality checks",
+      "KPI tracking",
+      "Iteration planning",
+      "Operator enablement",
+    ],
+    bestFor:
+      "Teams with live automations or agent workflows that need durable support, measurement, and improvement.",
   },
   {
     tier: "Retainer",
-    title: "Embedded Team",
+    title: "Embedded AI Team",
     outcome:
       "You get an embedded AI operations team on retainer to keep building, deploying, and supporting workflow systems inside your organization.",
     summary:
@@ -64,9 +106,10 @@ const offerings: Offering[] = [
 ];
 
 const pathSteps = [
-  "Find the leverage",
-  "Fix one workflow",
-  "Keep building with an embedded team",
+  "Audit the opportunity",
+  "Deploy the first workflow",
+  "Operate and improve the system",
+  "Embed a durable AI team",
 ];
 
 const Offerings = () => (
@@ -178,12 +221,12 @@ const Offerings = () => (
                 Service Tracks
               </p>
               <h2 className="font-heading text-3xl font-bold md:text-4xl">
-                Start focused, or bring us in deeper
+                Start focused, then build toward operated capability
               </h2>
             </div>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-              Both tracks produce usable operational assets, not strategy decks
-              that wait for someone else to implement them.
+              Every track is designed to produce usable operational assets, not
+              strategy decks that wait for someone else to implement them.
             </p>
           </AnimatedSection>
 
@@ -312,7 +355,7 @@ const Offerings = () => (
                 asChild
               >
                 <Link href="https://ai.raidguild.org/contact">
-                  Reach Out
+                  Book an AI Ops Audit
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
@@ -336,7 +379,7 @@ const Offerings = () => (
           Forward Deployed Agency · RaidGuild
         </span>
         <span className="font-mono text-xs text-muted-foreground/50">
-          AI-native operations packages.
+          AI-native operations, deployed and operated.
         </span>
       </div>
     </footer>

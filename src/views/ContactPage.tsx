@@ -45,9 +45,9 @@ const ContactPage = () => (
               </span>
             </h1>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Share the workflow, coordination gap, or operational knot that
-              needs attention. This isolated route lets us test the contact flow
-              before wiring it into the main homepage CTA.
+              Share the workflow, coordination gap, or operational bottleneck
+              you want to improve. We&apos;ll review the context and follow up
+              with the clearest next step.
             </p>
           </div>
 

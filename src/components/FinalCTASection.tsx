@@ -16,19 +16,19 @@ const meshNodes = Array.from({ length: 12 }, (_, i) => ({
 
 const models = [
   {
-    title: "Opportunity Audit",
-    desc: "Identify where a deployed AI team can create leverage in 2-4 weeks.",
+    title: "AI Ops Audit",
+    desc: "Map one priority workflow, size the opportunity, and define the first deployment plan.",
   },
   {
-    title: "Agency Deployment",
-    desc: "Embed engineers and operators to build production-ready agent workflows.",
+    title: "Workflow Deployment",
+    desc: "Embed engineers and operators to build one production-ready automation or agent workflow.",
   },
   {
     title: "Operating Partnership",
     desc: "Ongoing monitoring, evaluation, and optimization against business KPIs.",
   },
   {
-    title: "Embedded Team",
+    title: "Embedded AI Team",
     desc: "Dedicated forward deployed talent working inside your organization.",
   },
 ];
@@ -83,7 +83,9 @@ const FinalCTASection = () => (
 
       <AnimatedSection delay={0.1}>
         <p className="mx-auto max-w-3xl text-center text-lg text-muted-foreground mb-12">
-          From AI ambition to operated capability inside your organization.
+          In the audit, we map one priority workflow, identify the
+          highest-leverage automation opportunities, and return a practical
+          deployment plan your team can act on.
         </p>
       </AnimatedSection>
 
@@ -117,7 +119,7 @@ const FinalCTASection = () => (
             className="rounded-sm font-heading tracking-wider uppercase text-sm px-10"
             asChild
           >
-            <Link href="/contact">Deploy the Agency</Link>
+            <Link href="/contact">Book an AI Ops Audit</Link>
           </Button>
           <Button
             size="lg"

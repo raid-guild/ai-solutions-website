@@ -122,11 +122,13 @@ const MercenariesSection = () => (
     <div className="max-w-7xl mx-auto px-6">
       <AnimatedSection className="mx-auto mb-12 max-w-4xl text-center">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-accent mb-4">
-          Meet Your Mercenaries
+          Meet Your Operators
         </p>
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-          Forward deployed mercenaries ready to slay your{" "}
-          <span className="text-accent text-glow-violet">digital demons.</span>
+          Senior AI operators ready to untangle your{" "}
+          <span className="text-accent text-glow-violet">
+            messiest workflows.
+          </span>
         </h2>
       </AnimatedSection>
 
@@ -134,7 +136,7 @@ const MercenariesSection = () => (
         <div className="flex flex-col items-center gap-6">
           <MercenaryGrid />
           <p className="max-w-xl text-center font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
-            Battle-tested RaidGuild talent. Click to delve deeper.
+            Battle-tested RaidGuild talent. Click to explore the roster.
           </p>
         </div>
       </AnimatedSection>
@@ -173,7 +175,7 @@ const MercenariesSection = () => (
           asChild
         >
           <Link href="/contact">
-            Hire the Mercenaries
+            Talk to the AI Ops Team
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </Button>
