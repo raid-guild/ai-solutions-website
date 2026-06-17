@@ -76,7 +76,7 @@ const FinalCTASection = () => (
         <h2 className="mx-auto max-w-3xl text-center font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
           Bring us a business bottleneck.{" "}
           <span className="text-primary text-glow-teal">
-            We&apos;ll deploy the team to unlock it.
+            We&apos;ll deploy the team to fix it.
           </span>
         </h2>
       </AnimatedSection>
@@ -84,7 +84,7 @@ const FinalCTASection = () => (
       <AnimatedSection delay={0.1}>
         <p className="mx-auto max-w-3xl text-center text-lg text-muted-foreground mb-12">
           In the audit, we map one priority workflow, identify the
-          highest-leverage automation opportunities, and return a practical
+          highest-value automation opportunities, and return a practical
           deployment plan your team can act on.
         </p>
       </AnimatedSection>

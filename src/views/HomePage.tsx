@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import ProofStripSection from "@/components/ProofStripSection";
+import AuditProcessSection from "@/components/AuditProcessSection";
 import MercenariesSection from "@/components/MercenariesSection";
 import AIProjectsSection from "@/components/AIProjectsSection";
 import MediaSection from "@/components/MediaSection";
@@ -14,6 +16,8 @@ const Index = ({ mediaPosts }: { mediaPosts: MediaPost[] }) => (
   <div className="noise-bg relative">
     <Navbar />
     <HeroSection />
+    <ProofStripSection />
+    <AuditProcessSection />
     <MercenariesSection />
     <AIProjectsSection />
     <MediaSection posts={mediaPosts} />
