@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
@@ -76,7 +77,7 @@ const HeroSection = () => (
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9 }}
-          className="flex flex-wrap gap-4"
+          className="flex flex-wrap items-center gap-4"
         >
           <Button
             size="lg"
@@ -85,14 +86,13 @@ const HeroSection = () => (
           >
             <Link href="/contact">Book an AI Ops Audit</Link>
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="rounded-sm font-heading tracking-wider uppercase text-sm px-8 border-primary/30 text-primary hover:bg-primary/10"
-            asChild
+          <Link
+            href="/offerings"
+            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] text-primary transition-colors hover:text-accent"
           >
-            <Link href="/offerings">View Service Packages</Link>
-          </Button>
+            See service packages
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
         </motion.div>
       </div>
     </div>
