@@ -151,10 +151,10 @@ const AIProjectsSection = () => (
                     href={project.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-auto inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] text-primary transition-colors hover:text-accent"
+                    className="mt-auto inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-primary"
                   >
-                    Explore Project
-                    <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                    View project proof
+                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                   </Link>
                 </div>
               </motion.div>

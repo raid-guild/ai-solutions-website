@@ -89,10 +89,11 @@ const Navbar = () => {
           </Link>
           <Button
             size="sm"
-            className="rounded-sm font-heading text-xs tracking-wider uppercase"
+            variant="outline"
+            className="rounded-sm border-primary/30 px-3 font-heading text-[10px] uppercase tracking-wider text-primary hover:bg-primary/10 sm:text-xs"
             asChild
           >
-            <Link href="/contact">Contact Us</Link>
+            <Link href="/contact">Book an AI Ops Audit</Link>
           </Button>
         </div>
       </div>

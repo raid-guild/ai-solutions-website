@@ -74,9 +74,9 @@ const FinalCTASection = () => (
       </AnimatedSection>
       <AnimatedSection>
         <h2 className="mx-auto max-w-3xl text-center font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-          Bring us a business bottleneck.{" "}
+          Bring us the workflow that keeps breaking{" "}
           <span className="text-primary text-glow-teal">
-            We&apos;ll deploy the team to unlock it.
+            between demo and production.
           </span>
         </h2>
       </AnimatedSection>
@@ -120,14 +120,6 @@ const FinalCTASection = () => (
             asChild
           >
             <Link href="/contact">Book an AI Ops Audit</Link>
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="rounded-sm font-heading tracking-wider uppercase text-sm px-10 border-accent/40 text-accent hover:bg-accent/10"
-            asChild
-          >
-            <Link href="/offerings">View Offerings</Link>
           </Button>
         </div>
       </AnimatedSection>
