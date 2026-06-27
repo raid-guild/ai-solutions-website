@@ -1,4 +1,6 @@
 const PORTAL_ORIGIN = "https://portal.raidguild.org";
+const FEATURED_POST_SLUG =
+  "from-legacy-complexity-to-progressive-automation-the-daohaus-hauskeeper-raid";
 
 type PortalMedia = {
   alt?: string | null;
@@ -11,17 +13,19 @@ type PortalMedia = {
 };
 
 type PortalPostResponse = {
-  docs?: Array<{
-    id: number | string;
-    title?: string;
-    slug?: string;
-    publishedAt?: string;
-    createdAt?: string;
-    meta?: {
-      description?: string | null;
-      image?: PortalMedia | null;
-    };
-  }>;
+  docs?: PortalPost[];
+};
+
+type PortalPost = {
+  id: number | string;
+  title?: string;
+  slug?: string;
+  publishedAt?: string;
+  createdAt?: string;
+  meta?: {
+    description?: string | null;
+    image?: PortalMedia | null;
+  };
 };
 
 export type MediaPost = {
@@ -43,11 +47,11 @@ const absolutePortalUrl = (path?: string | null) => {
 
 const formatDate = (date: string) => {
   if (date === undefined || date === null || date.trim() === "") {
-    return "Latest";
+    return "Featured";
   }
 
   const timestamp = Date.parse(date);
-  if (Number.isNaN(timestamp)) return "Latest";
+  if (Number.isNaN(timestamp)) return "Featured";
 
   return new Intl.DateTimeFormat("en", {
     month: "short",
@@ -57,16 +61,39 @@ const formatDate = (date: string) => {
   }).format(new Date(timestamp));
 };
 
-/**
- * Fetches public Portal posts and normalizes them for the homepage media cards.
- */
-export async function getPortalPosts({
-  limit = 3,
-  categoryId,
-}: {
+type GetPortalPostsOptions = {
   limit?: number;
   categoryId?: number | string;
-} = {}): Promise<MediaPost[]> {
+};
+
+const normalizePortalPost = (post: PortalPost): MediaPost | null => {
+  if (!post.slug) return null;
+
+  const image = post.meta?.image;
+  const imageUrl =
+    absolutePortalUrl(image?.sizes?.medium?.url) ||
+    absolutePortalUrl(image?.sizes?.small?.url) ||
+    absolutePortalUrl(image?.url);
+
+  const publishedAt = post.publishedAt || post.createdAt || "";
+
+  return {
+    id: String(post.id),
+    title: post.title || "Untitled",
+    href: `${PORTAL_ORIGIN}/posts/${post.slug}`,
+    description: post.meta?.description || "Read more from RaidGuild.",
+    publishedAt,
+    publishedLabel: formatDate(publishedAt),
+    imageAlt: image?.alt || post.title || "RaidGuild Portal post",
+    imageUrl,
+  };
+};
+
+const fetchPortalPosts = async ({
+  limit,
+  categoryId,
+  slug,
+}: GetPortalPostsOptions & { limit: number; slug?: string }) => {
   const url = new URL("/api/posts", PORTAL_ORIGIN);
   url.searchParams.set("limit", String(limit));
   url.searchParams.set("depth", "1");
@@ -75,6 +102,10 @@ export async function getPortalPosts({
 
   if (categoryId) {
     url.searchParams.set("where[categories][in]", String(categoryId));
+  }
+
+  if (slug) {
+    url.searchParams.set("where[slug][equals]", slug);
   }
 
   try {
@@ -99,30 +130,42 @@ export async function getPortalPosts({
 
     const data = (await response.json()) as PortalPostResponse;
 
-    return (data.docs || []).flatMap((post) => {
-      if (!post.slug) return [];
-
-      const image = post.meta?.image;
-      const imageUrl =
-        absolutePortalUrl(image?.sizes?.medium?.url) ||
-        absolutePortalUrl(image?.sizes?.small?.url) ||
-        absolutePortalUrl(image?.url);
-
-      const publishedAt = post.publishedAt || post.createdAt || "";
-
-      return {
-        id: String(post.id),
-        title: post.title || "Untitled",
-        href: `${PORTAL_ORIGIN}/posts/${post.slug}`,
-        description: post.meta?.description || "Read the latest from RaidGuild.",
-        publishedAt,
-        publishedLabel: formatDate(publishedAt),
-        imageAlt: image?.alt || post.title || "RaidGuild Portal post",
-        imageUrl,
-      };
-    });
+    return (data.docs || []).flatMap((post) => normalizePortalPost(post) || []);
   } catch (error) {
     console.error("Failed to fetch portal posts.", error);
     return [];
   }
+};
+
+/**
+ * Fetches public Portal posts and normalizes them for the homepage media cards.
+ */
+export async function getPortalPosts({
+  limit = 3,
+  categoryId,
+}: GetPortalPostsOptions = {}): Promise<MediaPost[]> {
+  if (limit <= 0) return [];
+
+  const [featuredPosts, latestPosts] = await Promise.all([
+    fetchPortalPosts({
+      limit: 1,
+      slug: FEATURED_POST_SLUG,
+    }),
+    fetchPortalPosts({
+      limit: limit + 1,
+      categoryId,
+    }),
+  ]);
+
+  const featuredPost = featuredPosts[0];
+
+  if (!featuredPost) {
+    return latestPosts.slice(0, limit);
+  }
+
+  const latestWithoutFeatured = latestPosts.filter(
+    (post) => post.href !== featuredPost.href,
+  );
+
+  return [featuredPost, ...latestWithoutFeatured].slice(0, limit);
 }

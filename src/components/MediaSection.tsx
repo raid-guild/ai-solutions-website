@@ -14,7 +14,7 @@ const MediaSection = ({ posts }: { posts: MediaPost[] }) => (
             Media
           </p>
           <h2 className="mb-5 font-heading text-3xl font-bold md:text-4xl lg:text-5xl">
-            Latest AI Solutions dispatches.
+            Featured AI Solutions dispatches.
           </h2>
           <p className="text-lg leading-relaxed text-muted-foreground">
             Field notes, public briefs, and essays from the RaidGuild Portal.
