@@ -3,10 +3,9 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Bot, BrainCircuit, RadioTower, Workflow } from "lucide-react";
+import { Bot, BrainCircuit, RadioTower, Workflow } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
-import { Button } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
@@ -168,18 +167,6 @@ const MercenariesSection = () => (
         })}
       </div>
 
-      <AnimatedSection delay={0.35} className="mt-10 text-center">
-        <Button
-          variant="outline"
-          className="rounded-sm border-accent/30 text-accent hover:bg-accent/10 hover:text-accent"
-          asChild
-        >
-          <Link href="/contact">
-            Talk to the AI Ops Team
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-        </Button>
-      </AnimatedSection>
     </div>
 
     <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />

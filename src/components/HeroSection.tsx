@@ -37,9 +37,9 @@ const HeroSection = () => (
           transition={{ delay: 0.3, duration: 0.8 }}
           className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6"
         >
-          AI operators for messy workflows, fragmented knowledge, and{" "}
+          Forward-deployed AI operators for the messy middle between{" "}
           <span className="text-primary text-glow-teal">
-            coordination debt.
+            prototype and production.
           </span>
         </motion.h1>
         <motion.p
@@ -48,10 +48,10 @@ const HeroSection = () => (
           transition={{ delay: 0.5, duration: 0.7 }}
           className="text-lg text-muted-foreground max-w-lg mb-8 leading-relaxed"
         >
-          RaidGuild AI embeds senior builders and operators into your workflows
-          to design, ship, and maintain practical AI systems: internal
-          copilots, workflow automation, knowledge infrastructure, and
-          agent-assisted operations built for real-world use.
+          RaidGuild embeds senior builders and operators inside your workflows
+          to turn ambiguous business processes into reliable AI systems:
+          agents, evals, integrations, data pipelines, and operating loops that
+          survive real world use.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -60,9 +60,9 @@ const HeroSection = () => (
           className="space-y-3 mb-10"
         >
           {[
-            "One painful workflow turned into a working system",
-            "Agents connected to your docs, comms, tools, and APIs",
-            "Human checkpoints, evaluations, and ongoing operational support",
+            "Technical discovery through go-live",
+            "Agents connected to your docs, tools, APIs, and customer workflows",
+            "Evals, QA, observability, and human checkpoints after launch",
           ].map((point) => (
             <div key={point} className="flex items-center gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -78,21 +78,29 @@ const HeroSection = () => (
           transition={{ delay: 0.9 }}
           className="flex flex-wrap gap-4"
         >
-          <Button
-            size="lg"
-            className="rounded-sm font-heading tracking-wider uppercase text-sm px-8"
-            asChild
-          >
-            <Link href="/contact">Book an AI Ops Audit</Link>
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="rounded-sm font-heading tracking-wider uppercase text-sm px-8 border-primary/30 text-primary hover:bg-primary/10"
-            asChild
-          >
-            <Link href="/offerings">View Service Packages</Link>
-          </Button>
+          <div className="space-y-3">
+            <div className="flex flex-wrap gap-4">
+              <Button
+                size="lg"
+                className="rounded-sm font-heading tracking-wider uppercase text-sm px-8"
+                asChild
+              >
+                <Link href="/contact">Book an AI Ops Audit</Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-sm font-heading tracking-wider uppercase text-sm px-8 border-primary/30 text-primary hover:bg-primary/10"
+                asChild
+              >
+                <Link href="/offerings">See how we engage</Link>
+              </Button>
+            </div>
+            <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
+              Free 30-min audit. Walk away with a deployment plan, whether or
+              not you hire us.
+            </p>
+          </div>
         </motion.div>
       </div>
     </div>
