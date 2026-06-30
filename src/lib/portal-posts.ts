@@ -11,7 +11,7 @@ const CUSTOM_MEDIA_POSTS: MediaPost[] = [
     publishedAt: "2026-06-30",
     publishedLabel: "Field Report",
     imageAlt: "Field Experience from the Edge",
-    imageUrl: null,
+    imageUrl: "/assets/fireside-preview.png",
   },
 ];
 
