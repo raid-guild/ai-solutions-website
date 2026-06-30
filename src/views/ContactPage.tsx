@@ -39,15 +39,16 @@ const ContactPage = () => (
               RaidGuild AI Solutions Contact
             </p>
             <h1 className="mb-6 max-w-3xl font-heading text-4xl font-bold leading-[1.08] tracking-tight md:text-5xl lg:text-6xl">
-              Bring us the bottleneck.{" "}
+              Bring us the scattered tools, docs, and workflows.{" "}
               <span className="text-primary text-glow-teal">
-                We&apos;ll trace the system.
+                We&apos;ll map the operating layer.
               </span>
             </h1>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Share the workflow, coordination gap, or operational bottleneck
-              you want to improve. We&apos;ll review the context and follow up
-              with the clearest next step.
+              Share where AI is already being used, where work still depends on
+              copy-paste, or where agents could help if they had the right
+              context and permissions. We&apos;ll review it and follow up with
+              the clearest next step.
             </p>
           </div>
 

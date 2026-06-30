@@ -16,22 +16,22 @@ import { mercenaries, type Mercenary } from "@/lib/data/members";
 const mercenaryGuilds = [
   {
     title: "Agent Architects",
-    copy: "Design agents, memory, evaluations, and tool use around the work your team already does.",
+    copy: "Design agents, memory, evaluations, and tool use around how your organization actually works.",
     icon: BrainCircuit,
   },
   {
     title: "Workflow Weavers",
-    copy: "Connect documents, CRMs, inboxes, APIs, and internal systems into reliable operating loops.",
+    copy: "Connect documents, CRMs, inboxes, APIs, and internal systems into shared operating context.",
     icon: Workflow,
   },
   {
     title: "Comms Operators",
-    copy: "Deploy communication lines across Discord, X, email, and content channels with human checkpoints.",
+    copy: "Shape the communication paths where people, agents, customers, and internal teams coordinate.",
     icon: RadioTower,
   },
   {
     title: "Automation Raiders",
-    copy: "Ship pragmatic systems that remove drag, surface signal, and keep improving after launch.",
+    copy: "Ship pragmatic systems that remove drag, surface signal, and compound after the foundation is in place.",
     icon: Bot,
   },
 ];
@@ -121,12 +121,12 @@ const MercenariesSection = () => (
     <div className="max-w-7xl mx-auto px-6">
       <AnimatedSection className="mx-auto mb-12 max-w-4xl text-center">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-accent mb-4">
-          Meet Your Operators
+          Builder Network
         </p>
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-          Senior AI operators ready to untangle your{" "}
+          Forward-deployed AI builders for{" "}
           <span className="text-accent text-glow-violet">
-            messiest workflows.
+            agent-ready operations.
           </span>
         </h2>
       </AnimatedSection>

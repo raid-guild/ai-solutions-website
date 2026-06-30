@@ -13,14 +13,14 @@ const TheShiftSection = () => (
     <div className="max-w-3xl mx-auto px-6 relative z-10">
       <AnimatedSection>
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8">
-          Software was the deliverable.{" "}
-          <span className="text-primary text-glow-teal">Now deployed capability is.</span>
+          Giving everyone AI tools is easy.{" "}
+          <span className="text-primary text-glow-teal">Making the company AI-ready is the hard part.</span>
         </h2>
       </AnimatedSection>
 
       <AnimatedSection delay={0.1}>
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-          AI does not create business impact by sitting in a tool stack. It needs a team close enough to understand the work, redesign the flow, connect the systems, and keep improving it in production.
+          Most teams start with individual experiments: prompts, copied data, private workflows, and quick automations that help one person at a time. That is useful, but it does not become organizational leverage until the business has shared context, clear access rules, and workflows designed for humans and agents together.
         </p>
       </AnimatedSection>
 
@@ -28,9 +28,9 @@ const TheShiftSection = () => (
         <p className="text-sm text-muted-foreground mb-6 font-mono uppercase tracking-wider">Most teams:</p>
         <div className="space-y-4 mb-10">
           {[
-            "Know AI matters, but not where to deploy it first",
-            "Need speed across fragmented systems and teams",
-            "Lack the dedicated capacity to operate new workflows reliably",
+            "Have people testing AI, but no shared operating model",
+            "Keep business context scattered across tools, docs, inboxes, and spreadsheets",
+            "Need safe ways for agents to read, reason, act, and hand work back to people",
           ].map((point) => (
             <div key={point} className="flex items-start gap-3">
               <div className="w-1 h-1 rounded-full bg-muted-foreground/40 mt-2.5 shrink-0" />
@@ -42,8 +42,8 @@ const TheShiftSection = () => (
 
       <AnimatedSection delay={0.3}>
         <p className="text-xl font-heading font-semibold leading-relaxed">
-          There is a gap between AI capability and real business acceleration.{" "}
-          <span className="text-accent text-glow-violet">We deploy into that gap.</span>
+          The companies that win are not just AI users.{" "}
+          <span className="text-accent text-glow-violet">They become agent-ready organizations.</span>
         </p>
       </AnimatedSection>
     </div>

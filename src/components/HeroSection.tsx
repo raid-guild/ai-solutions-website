@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => (
   <section
     id="home"
-    className="relative flex min-h-screen items-center overflow-hidden bg-background pt-16"
+    className="relative flex min-h-[92svh] items-center overflow-hidden bg-background pt-16 md:min-h-screen"
   >
     <Image
       src="/images/abstract-system-graph-hero.png"
@@ -21,48 +21,47 @@ const HeroSection = () => (
     <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,transparent_0%,hsl(var(--background)/0.03)_45%,hsl(var(--background)/0.01)_100%)]" />
 
-    <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-6">
+    <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-6 py-14 md:py-20">
       <div className="max-w-2xl">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-6"
+          className="mb-5 font-mono text-[11px] uppercase tracking-[0.2em] text-primary md:mb-6 md:text-xs"
         >
-          Forward Deployed AI Mercenaries
+          Forward-Deployed AI Builders
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6"
+          className="mb-5 font-heading text-4xl font-bold leading-[1.08] tracking-tight md:mb-6 md:text-5xl lg:text-6xl"
         >
-          Forward-deployed AI operators for the messy middle between{" "}
+          Your team is already using AI.{" "}
           <span className="text-primary text-glow-teal">
-            prototype and production.
+            Now make it operational.
           </span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.7 }}
-          className="text-lg text-muted-foreground max-w-lg mb-8 leading-relaxed"
+          className="mb-7 max-w-lg text-base leading-relaxed text-muted-foreground md:mb-8 md:text-lg"
         >
-          RaidGuild embeds senior builders and operators inside your workflows
-          to turn ambiguous business processes into reliable AI systems:
-          agents, evals, integrations, data pipelines, and operating loops that
-          survive real world use.
+          RaidGuild helps COOs and CTOs turn scattered prompts, private
+          automations, and disconnected tools into governed AI workflows
+          employees can actually use.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="space-y-3 mb-10"
+          className="mb-8 space-y-3 md:mb-10"
         >
           {[
-            "Technical discovery through go-live",
-            "Agents connected to your docs, tools, APIs, and customer workflows",
-            "Evals, QA, observability, and human checkpoints after launch",
+            "Connect docs, tools, data, approvals, and workflows",
+            "Add scoped access, human review, and agent-ready interfaces",
+            "Train employees to build safe automations that compound",
           ].map((point) => (
             <div key={point} className="flex items-center gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -85,7 +84,7 @@ const HeroSection = () => (
                 className="rounded-sm font-heading tracking-wider uppercase text-sm px-8"
                 asChild
               >
-                <Link href="/contact">Book an AI Ops Audit</Link>
+                <Link href="/contact">Book an AI Readiness Workshop</Link>
               </Button>
               <Button
                 size="lg"
@@ -93,12 +92,12 @@ const HeroSection = () => (
                 className="rounded-sm font-heading tracking-wider uppercase text-sm px-8 border-primary/30 text-primary hover:bg-primary/10"
                 asChild
               >
-                <Link href="/offerings">See how we engage</Link>
+                <Link href="/offerings">View the packages</Link>
               </Button>
             </div>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-              Free 30-min audit. Walk away with a deployment plan, whether or
-              not you hire us.
+              Free 30-min consultation. Walk away with a clearer roadmap for
+              making AI useful inside real business processes.
             </p>
           </div>
         </motion.div>
