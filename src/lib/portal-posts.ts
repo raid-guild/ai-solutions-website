@@ -1,6 +1,19 @@
 const PORTAL_ORIGIN = "https://portal.raidguild.org";
 const FEATURED_POST_SLUG =
   "from-legacy-complexity-to-progressive-automation-the-daohaus-hauskeeper-raid";
+const CUSTOM_MEDIA_POSTS: MediaPost[] = [
+  {
+    id: "fireside-ai-field-experience",
+    title: "Field Experience from the Edge",
+    href: "https://fireside.raidguild.org/",
+    description:
+      "A field report from 15 builder interviews on how people are adapting to AI in real work.",
+    publishedAt: "2026-06-30",
+    publishedLabel: "Field Report",
+    imageAlt: "Field Experience from the Edge",
+    imageUrl: null,
+  },
+];
 
 type PortalMedia = {
   alt?: string | null;
@@ -146,13 +159,18 @@ export async function getPortalPosts({
 }: GetPortalPostsOptions = {}): Promise<MediaPost[]> {
   if (limit <= 0) return [];
 
+  const customPosts = CUSTOM_MEDIA_POSTS.slice(0, limit);
+  const portalLimit = Math.max(limit - customPosts.length, 0);
+
+  if (portalLimit === 0) return customPosts;
+
   const [featuredPosts, latestPosts] = await Promise.all([
     fetchPortalPosts({
       limit: 1,
       slug: FEATURED_POST_SLUG,
     }),
     fetchPortalPosts({
-      limit: limit + 1,
+      limit: portalLimit + 1,
       categoryId,
     }),
   ]);
@@ -160,12 +178,14 @@ export async function getPortalPosts({
   const featuredPost = featuredPosts[0];
 
   if (!featuredPost) {
-    return latestPosts.slice(0, limit);
+    return [...customPosts, ...latestPosts].slice(0, limit);
   }
 
   const latestWithoutFeatured = latestPosts.filter(
     (post) => post.href !== featuredPost.href,
   );
 
-  return [featuredPost, ...latestWithoutFeatured].slice(0, limit);
+  return [customPosts, featuredPost, latestWithoutFeatured]
+    .flat()
+    .slice(0, limit);
 }
