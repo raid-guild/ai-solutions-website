@@ -16,20 +16,20 @@ const meshNodes = Array.from({ length: 12 }, (_, i) => ({
 
 const models = [
   {
-    title: "AI Ops Audit",
-    desc: "Map one priority workflow, size the opportunity, and define the first deployment plan.",
+    title: "AI Readiness Workshop",
+    desc: "Map the tools, workflows, data, and team behaviors shaping your current AI adoption.",
   },
   {
-    title: "Workflow Deployment",
-    desc: "Embed engineers and operators to build one production-ready automation or agent workflow.",
+    title: "AI Operating Layer",
+    desc: "Build the shared context, access rules, and interfaces agents need to work safely.",
+  },
+  {
+    title: "Agent Workflow Enablement",
+    desc: "Kickstart employee-led automations, copilots, and human-agent workflows.",
   },
   {
     title: "Operating Partnership",
-    desc: "Ongoing monitoring, evaluation, and optimization against business KPIs.",
-  },
-  {
-    title: "Embedded AI Team",
-    desc: "Dedicated forward deployed talent working inside your organization.",
+    desc: "Keep the system measured, improved, and adopted as the business changes.",
   },
 ];
 
@@ -74,18 +74,18 @@ const FinalCTASection = () => (
       </AnimatedSection>
       <AnimatedSection>
         <h2 className="mx-auto max-w-3xl text-center font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-          Bring us the workflow that keeps breaking{" "}
+          Bring us the scattered tools, docs, and workflows that should become{" "}
           <span className="text-primary text-glow-teal">
-            between demo and production.
+            your AI operating layer.
           </span>
         </h2>
       </AnimatedSection>
 
       <AnimatedSection delay={0.1}>
         <p className="mx-auto max-w-3xl text-center text-lg text-muted-foreground mb-12">
-          In the audit, we map one priority workflow, identify the
-          highest-leverage automation opportunities, and return a practical
-          deployment plan your team can act on.
+          In the first consultation, we map where AI is already showing up,
+          where context is fragmented, and what foundation your team needs before
+          agents can create reliable leverage.
         </p>
       </AnimatedSection>
 
@@ -119,7 +119,7 @@ const FinalCTASection = () => (
             className="rounded-sm font-heading tracking-wider uppercase text-sm px-10"
             asChild
           >
-            <Link href="/contact">Book an AI Ops Audit</Link>
+            <Link href="/contact">Map Your AI Operating Layer</Link>
           </Button>
         </div>
       </AnimatedSection>

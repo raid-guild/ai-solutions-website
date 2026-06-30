@@ -5,7 +5,7 @@ import "@/index.css";
 export const metadata: Metadata = {
   title: "RaidGuild AI Solutions",
   description:
-    "Forward deployed AI operators building agentic systems, context infrastructure, and operated automation for teams with complex workflows.",
+    "Forward-deployed AI builders creating operating layers, context infrastructure, and agent-ready workflows for teams becoming AI-enabled organizations.",
 };
 
 export default function RootLayout({

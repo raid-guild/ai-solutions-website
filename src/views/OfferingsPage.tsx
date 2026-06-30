@@ -20,96 +20,104 @@ type Offering = {
 
 const offerings: Offering[] = [
   {
-    tier: "Assessment",
-    title: "AI Ops Audit",
+    tier: "Workshop",
+    title: "AI Readiness Workshop",
     outcome:
-      "You get one priority workflow mapped, the highest-leverage automation opportunities identified, and a practical deployment plan.",
+      "You get a clear map of where AI is already showing up, where business context is fragmented, and what foundation should be built first.",
     summary:
-      "A focused entry point for teams that know AI matters, but need clarity on where it should create operational leverage first.",
+      "A focused entry point for teams using AI in pockets, but missing a shared operating model for tools, data, access, and workflows.",
     includes: [
-      "Workflow mapping",
-      "Opportunity sizing",
-      "System and data readiness review",
-      "Deployment recommendations",
-      "Prioritized next-step roadmap",
+      "Current AI usage review",
+      "System and workflow inventory",
+      "Context and data readiness map",
+      "Risk and access review",
+      "Prioritized foundation roadmap",
     ],
     examples: [
-      "Customer intake",
-      "Invoicing",
-      "Reporting",
-      "Onboarding",
-      "Approvals",
-      "Follow-up flows",
+      "Team AI habits",
+      "Tool sprawl",
+      "Copy-paste work",
+      "Data handoffs",
+      "Knowledge gaps",
+      "Automation candidates",
     ],
     bestFor:
-      "Teams that need an executive-grade read on where AI can safely create leverage before committing to implementation.",
+      "COOs, CTOs, and operators who know AI matters, but need a practical path for employees to use it correctly without guessing or buying more tools.",
   },
   {
-    tier: "Implementation",
-    title: "Workflow Deployment",
+    tier: "Foundation Build",
+    title: "AI Operating Layer",
     outcome:
-      "You get one painful workflow turned into a working AI-assisted system with the right integrations, checkpoints, and handoff.",
+      "You get the shared context, access rules, and system interfaces that make reporting, automation, and agents reliable.",
     summary:
-      "A build engagement for teams ready to move from recommendation to a usable internal workflow.",
+      "A foundational build for organizations ready to turn scattered systems and one-off AI use into reusable operational infrastructure.",
     includes: [
-      "Workflow redesign",
-      "Agent or automation buildout",
-      "Tool and API integrations",
+      "Canonical business data model",
+      "Scoped roles and permissioning",
+      "Searchable knowledge layer",
+      "Operational event stream",
+      "Automation-ready interfaces",
+    ],
+    examples: [
+      "CRM + inbox context",
+      "Customer records",
+      "Internal knowledge",
+      "Reporting inputs",
+      "Approval paths",
+      "Agent tool access",
+    ],
+    bestFor:
+      "Teams that want AI to become a repeatable business capability instead of a collection of disconnected experiments.",
+  },
+  {
+    tier: "Flywheel Kickstart",
+    title: "Agent Workflow Enablement",
+    outcome:
+      "Your employees build the first practical automations, copilots, and human-agent workflows with expert support beside them.",
+    summary:
+      "A hands-on enablement engagement that turns the foundation into daily leverage while giving internal operators the confidence and patterns to keep creating.",
+    includes: [
+      "Coached workflow design",
+      "Reusable agent patterns",
+      "Tool and API integration guidance",
       "Human review checkpoints",
-      "Launch support and documentation",
+      "Employee-led launch support",
     ],
     examples: [
       "Sales follow-up",
       "Support triage",
       "Internal reporting",
-      "Knowledge retrieval",
+      "Client onboarding",
+      "Content operations",
       "Ops handoffs",
-      "Content workflows",
     ],
     bestFor:
-      "Teams that want practical proof of AI leverage through one concrete workflow shipped into real use.",
+      "Teams that want to kickstart the flywheel: use AI, free time, build better workflows, and create more capacity to keep improving.",
   },
   {
-    tier: "Ongoing Operations",
+    tier: "Full Program",
     title: "Operating Partnership",
     outcome:
-      "You get continued monitoring, evaluation, and optimization for AI workflows already operating inside the business.",
+      "You get a forward-deployed partner to keep the AI operating layer governed, measured, adopted, and improving while your internal builders level up.",
     summary:
-      "A managed partnership for teams that need AI systems to keep improving as the business, tools, and requirements change.",
+      "A continued partnership for organizations moving from first foundation and workflows into a durable culture of employee-led AI improvement.",
     includes: [
+      "Governance and observability",
       "Workflow monitoring",
       "Evaluation and quality checks",
-      "KPI tracking",
-      "Iteration planning",
-      "Operator enablement",
+      "Team workshops and enablement",
+      "Roadmap and iteration planning",
     ],
     bestFor:
-      "Teams with live automations or agent workflows that need durable support, measurement, and improvement.",
-  },
-  {
-    tier: "Retainer",
-    title: "Embedded AI Team",
-    outcome:
-      "You get an embedded AI operations team on retainer to keep building, deploying, and supporting workflow systems inside your organization.",
-    summary:
-      "A continued partnership for organizations ready to move from one-off workflow fixes into an AI-native operating layer.",
-    includes: [
-      "Retainer model for continued work",
-      "Full Refactory Deployment Package",
-      "AI readiness roadmap",
-      "Ongoing workflow implementations",
-      "Support, iteration, and operational enablement",
-    ],
-    bestFor:
-      "Teams that want a durable implementation partner for AI readiness, Refactory deployment, and ongoing operational improvements.",
+      "Teams that want a durable implementation partner while internal operators learn to build, measure, and improve with AI safely.",
   },
 ];
 
 const pathSteps = [
-  "Audit the opportunity",
-  "Deploy the first workflow",
-  "Operate and improve the system",
-  "Embed a durable AI team",
+  "Map current AI use",
+  "Build the operating layer",
+  "Launch agent-ready workflows",
+  "Train employees to keep compounding gains",
 ];
 
 const Offerings = () => (
@@ -153,7 +161,7 @@ const Offerings = () => (
               transition={{ delay: 0.1 }}
               className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-primary"
             >
-              AI-Native Operations Packages
+              AI Operating Layer Packages
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 18 }}
@@ -161,9 +169,9 @@ const Offerings = () => (
               transition={{ delay: 0.2, duration: 0.7 }}
               className="mb-6 max-w-4xl font-heading text-4xl font-bold leading-[1.08] tracking-tight md:text-5xl lg:text-6xl"
             >
-              Choose the first system.{" "}
+              Move from scattered AI use to{" "}
               <span className="text-primary text-glow-teal">
-                Build toward operational leverage.
+                agent-ready operations.
               </span>
             </motion.h1>
             <motion.p
@@ -172,9 +180,10 @@ const Offerings = () => (
               transition={{ delay: 0.35, duration: 0.7 }}
               className="max-w-2xl text-lg leading-relaxed text-muted-foreground"
             >
-              Start with a narrow workflow, validate the impact, then move into
-              deeper AI-native systems for coordination, knowledge, automation,
-              and internal operations.
+              The goal is not an AI department that builds everything for
+              everyone. Our packages help you create the shared context,
+              governed access, practical workflows, and employee capability that
+              let every team build safely.
             </motion.p>
           </div>
 
@@ -187,7 +196,7 @@ const Offerings = () => (
             <div className="mb-6 flex items-center gap-3">
               <Waypoints className="h-5 w-5 text-primary" aria-hidden="true" />
               <h2 className="font-heading text-lg font-semibold">
-                Progression Path
+                Foundation Path
               </h2>
             </div>
             <div className="space-y-5">
@@ -221,12 +230,13 @@ const Offerings = () => (
                 Service Tracks
               </p>
               <h2 className="font-heading text-3xl font-bold md:text-4xl">
-                Start focused, then build toward operated capability
+                Start with the foundation, then build the workflows
               </h2>
             </div>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-              Every track is designed to produce usable operational assets, not
-              strategy decks that wait for someone else to implement them.
+              Every track is designed to produce reusable business capability:
+              mapped context, connected systems, usable agent workflows, and
+              employees who understand how to improve them.
             </p>
           </AnimatedSection>
 
@@ -345,8 +355,9 @@ const Offerings = () => (
               Schedule Consultation
             </p>
             <h2 className="mb-6 font-heading text-3xl font-bold leading-tight md:text-4xl">
-              Tell us what is slowing the team down, what you are trying to
-              build, or where AI feels useful but unclear.
+              Tell us where AI is already creeping into the business, where work
+              is still copy-paste, or where agents could help if they had the
+              right context.
             </h2>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
@@ -355,7 +366,7 @@ const Offerings = () => (
                 asChild
               >
                 <Link href="https://ai.raidguild.org/contact">
-                  Book an AI Ops Audit
+                  Map Your AI Operating Layer
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
@@ -376,10 +387,10 @@ const Offerings = () => (
             height={24}
             className="h-6 w-6"
           />
-          Forward Deployed Agency · RaidGuild
+          Forward-Deployed AI Builders · RaidGuild
         </span>
         <span className="font-mono text-xs text-muted-foreground/50">
-          AI-native operations, deployed and operated.
+          Shared context, governed access, practical agents.
         </span>
       </div>
     </footer>

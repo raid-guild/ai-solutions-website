@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import AIAdoptionTrapSection from "@/components/AIAdoptionTrapSection";
 import MercenariesSection from "@/components/MercenariesSection";
 import AIProjectsSection from "@/components/AIProjectsSection";
 import MediaSection from "@/components/MediaSection";
@@ -14,6 +15,7 @@ const Index = ({ mediaPosts }: { mediaPosts: MediaPost[] }) => (
   <div className="noise-bg relative">
     <Navbar />
     <HeroSection />
+    <AIAdoptionTrapSection />
     <MercenariesSection />
     <AIProjectsSection />
     <MediaSection posts={mediaPosts} />
@@ -32,11 +34,11 @@ const Index = ({ mediaPosts }: { mediaPosts: MediaPost[] }) => (
             height={24}
             className="h-6 w-6"
           />
-          Forward Deployed AI Operators · RaidGuild
+          Forward-Deployed AI Builders · RaidGuild
         </span>
         <span className="font-mono text-xs text-muted-foreground/50">
-          Context, agents, and operated workflows for teams with coordination
-          debt.
+          Shared context, governed access, and practical agent workflows for
+          teams becoming AI-ready.
         </span>
       </div>
     </footer>

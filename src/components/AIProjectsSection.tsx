@@ -48,12 +48,12 @@ const AIProjectsSection = () => (
           AI Projects
         </p>
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-5">
-          Full stack enterprise AI infrastructure.
+          Proof from organizations already building with agents.
         </h2>
         <p className="text-lg leading-relaxed text-muted-foreground">
-          Our agency work is grounded in internal tools, field experiments, and
-          collaborations already shaping how RaidGuild coordinates, communicates,
-          and presents work with agents.
+          Our client work is grounded in internal systems, field experiments,
+          and collaborations already shaping how teams coordinate, communicate,
+          and operate with shared AI context.
         </p>
       </AnimatedSection>
 

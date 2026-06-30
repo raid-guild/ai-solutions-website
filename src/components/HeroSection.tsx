@@ -29,7 +29,7 @@ const HeroSection = () => (
           transition={{ delay: 0.2 }}
           className="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-6"
         >
-          Forward Deployed AI Mercenaries
+          Forward-Deployed AI Builders
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -37,9 +37,9 @@ const HeroSection = () => (
           transition={{ delay: 0.3, duration: 0.8 }}
           className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6"
         >
-          Forward-deployed AI operators for the messy middle between{" "}
+          Build the operating layer your business needs before AI can{" "}
           <span className="text-primary text-glow-teal">
-            prototype and production.
+            reliably do real work.
           </span>
         </motion.h1>
         <motion.p
@@ -48,10 +48,10 @@ const HeroSection = () => (
           transition={{ delay: 0.5, duration: 0.7 }}
           className="text-lg text-muted-foreground max-w-lg mb-8 leading-relaxed"
         >
-          RaidGuild embeds senior builders and operators inside your workflows
-          to turn ambiguous business processes into reliable AI systems:
-          agents, evals, integrations, data pipelines, and operating loops that
-          survive real world use.
+          RaidGuild helps your current team move beyond scattered prompts,
+          copy-paste work, and one-off automations. We map how your business
+          actually runs, connect the right context, and install the AI Operating
+          Layer that helps every employee become an agent-enabled power user.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -60,9 +60,9 @@ const HeroSection = () => (
           className="space-y-3 mb-10"
         >
           {[
-            "Technical discovery through go-live",
-            "Agents connected to your docs, tools, APIs, and customer workflows",
-            "Evals, QA, observability, and human checkpoints after launch",
+            "Shared business context across docs, tools, APIs, and teams",
+            "Scoped access, human checkpoints, and production-ready workflows",
+            "A compounding loop: use AI, free time, build workflows, free more time",
           ].map((point) => (
             <div key={point} className="flex items-center gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -85,7 +85,7 @@ const HeroSection = () => (
                 className="rounded-sm font-heading tracking-wider uppercase text-sm px-8"
                 asChild
               >
-                <Link href="/contact">Book an AI Ops Audit</Link>
+                <Link href="/contact">Map Your AI Operating Layer</Link>
               </Button>
               <Button
                 size="lg"
@@ -93,12 +93,12 @@ const HeroSection = () => (
                 className="rounded-sm font-heading tracking-wider uppercase text-sm px-8 border-primary/30 text-primary hover:bg-primary/10"
                 asChild
               >
-                <Link href="/offerings">See how we engage</Link>
+                <Link href="/offerings">View the packages</Link>
               </Button>
             </div>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-              Free 30-min audit. Walk away with a deployment plan, whether or
-              not you hire us.
+              Free 30-min consultation. Walk away with a clearer path for your
+              employees to become agent-enabled power users.
             </p>
           </div>
         </motion.div>

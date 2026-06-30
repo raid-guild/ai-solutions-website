@@ -149,11 +149,11 @@ export default function ContactForm({
             name="automationNeeds"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>What should we help automate? {requiredMarker}</FormLabel>
+                <FormLabel>What should become AI-ready? {requiredMarker}</FormLabel>
                 <FormControl>
                   <Textarea
                     className="min-h-[220px]"
-                    placeholder="Tell us what coordination, workflow, or operational problems your system should solve."
+                    placeholder="Tell us where AI is already showing up, where context is scattered, or which workflows should become agent-ready."
                     {...field}
                   />
                 </FormControl>
