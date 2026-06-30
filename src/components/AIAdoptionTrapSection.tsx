@@ -63,24 +63,16 @@ const AIAdoptionTrapSection = () => (
               another IT queue.
             </span>
           </h2>
-          <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground md:text-lg">
             COOs and CTOs are under pressure to formalize AI adoption. The
-            obvious move is a central AI function that gives departments
-            solutions on request. That creates ownership, but it can also
-            recreate the old IT bottleneck.
+            obvious move is a central AI function that takes requests from every
+            department. That creates ownership, but it can also recreate the old
+            IT bottleneck.
           </p>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Shadow AI is what happens when useful AI workflows grow outside the
-            company&apos;s operating model: copied data, private prompts,
-            undocumented automations, unclear permissions, and decisions the
-            business cannot reliably measure or govern.
-          </p>
-          <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-            The better path is distributed enablement: a lightweight operating
-            layer that gives every team safe context, access, and patterns for
-            building. Employees use AI to free time, use that time to build
-            better workflows, then use those workflows to create even more
-            capacity.
+            The better path is a lightweight operating layer: connected business
+            context, role-based access, reusable patterns, and training that lets
+            employees build safe AI workflows where the work already happens.
           </p>
         </AnimatedSection>
 

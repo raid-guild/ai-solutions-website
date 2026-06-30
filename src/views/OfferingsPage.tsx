@@ -366,7 +366,7 @@ const Offerings = () => (
                 asChild
               >
                 <Link href="https://ai.raidguild.org/contact">
-                  Map Your AI Operating Layer
+                  Book an AI Readiness Workshop
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>

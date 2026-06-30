@@ -119,7 +119,7 @@ const FinalCTASection = () => (
             className="rounded-sm font-heading tracking-wider uppercase text-sm px-10"
             asChild
           >
-            <Link href="/contact">Map Your AI Operating Layer</Link>
+            <Link href="/contact">Book an AI Readiness Workshop</Link>
           </Button>
         </div>
       </AnimatedSection>

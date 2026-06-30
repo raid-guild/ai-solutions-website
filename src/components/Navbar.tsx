@@ -93,7 +93,7 @@ const Navbar = () => {
             className="rounded-sm border-primary/30 px-3 font-heading text-[10px] uppercase tracking-wider text-primary hover:bg-primary/10 sm:text-xs"
             asChild
           >
-            <Link href="/contact">Map Your AI Layer</Link>
+            <Link href="/contact">AI Readiness Workshop</Link>
           </Button>
         </div>
       </div>
