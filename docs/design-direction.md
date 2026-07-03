@@ -16,12 +16,12 @@ Colors are defined in `src/index.css` as HSL tokens.
 
 | Role           | Token                      | HSL            | Approx Hex | Use                                          |
 | -------------- | -------------------------- | -------------- | ---------- | -------------------------------------------- |
-| Background     | `--background`             | `240 20% 3%`   | `#060609`  | Page background, deep canvas                 |
+| Background     | `--background`             | `240 20% 3%`   | `#291B21`  | Page background, deep canvas                 |
 | Foreground     | `--foreground`             | `30 10% 90%`   | `#e8e5e1`  | Primary text                                 |
 | Card           | `--card`                   | `240 15% 6%`   | `#0d0d12`  | Panels, diagrams, contained modules          |
 | Muted          | `--muted`                  | `240 10% 12%`  | `#1b1b22`  | Subtle surfaces                              |
 | Border         | `--border`                 | `240 10% 14%`  | `#202027`  | Thin dividers, card edges                    |
-| Muted text     | `--muted-foreground`       | `220 10% 50%`  | `#73798c`  | Secondary copy                               |
+| Muted text     | `--muted-foreground`       | `220 10% 50%`  | `#CCD4F0`  | Secondary copy                               |
 | Primary teal   | `--primary`                | `160 63% 50%`  | `#2fd09a`  | System activation, connections, primary CTAs |
 | Accent magenta | `--accent` / `--secondary` | `347 100% 61%` | `#ff3863`  | RaidGuild brand accent, contrast calls       |
 | Violet glow    | utility only               | `263 76% 66%`  | `#b866ea`  | Occasional atmospheric/heritage glow         |

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Bot, BrainCircuit, RadioTower, Workflow } from "lucide-react";
@@ -36,82 +36,121 @@ const mercenaryGuilds = [
   },
 ];
 
-function shuffleArray(array: Mercenary[]) {
-  const arr = [...array];
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
-
-const MercenaryGrid = () => {
-  const [shuffledMercenaries, setShuffledMercenaries] = useState<Mercenary[]>(
-    [],
-  );
-
-  useEffect(() => {
-    setShuffledMercenaries(shuffleArray(mercenaries).slice(0, 24));
-  }, []);
+const MercenaryAvatar = ({ mercenary }: { mercenary: Mercenary }) => {
+  const link = mercenary.link || "https://x.com/RaidGuild";
 
   return (
-    <motion.div
-      className="grid grid-cols-4 gap-2 sm:grid-cols-6 lg:grid-cols-8"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-60px" }}
-      variants={{
-        hidden: {},
-        visible: {
-          transition: {
-            staggerChildren: 0.025,
-          },
-        },
-      }}
-    >
-      {shuffledMercenaries.map((mercenary) => {
-        const link = mercenary.link || "https://x.com/RaidGuild";
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Link
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative block h-[72px] w-[72px] shrink-0 overflow-hidden rounded-full border-2 border-primary/15 bg-card transition-colors hover:border-primary/50"
+        >
+          <Image
+            src={mercenary.imagePath}
+            alt={mercenary.name}
+            fill
+            className="object-cover"
+            sizes="72px"
+          />
+        </Link>
+      </TooltipTrigger>
+      <TooltipContent side="top" className="border-border bg-card p-3">
+        <div className="text-center">
+          <p className="font-heading text-sm font-semibold leading-none">
+            {mercenary.name}
+          </p>
+          <p className="mt-1 text-xs leading-none text-muted-foreground">
+            {mercenary.title}
+          </p>
+        </div>
+      </TooltipContent>
+    </Tooltip>
+  );
+};
 
-        return (
-          <Tooltip key={mercenary.name}>
-            <TooltipTrigger asChild>
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, scale: 0.85, y: 8 },
-                  visible: { opacity: 1, scale: 1, y: 0 },
-                }}
-                transition={{ duration: 0.35 }}
-              >
-                <Link
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative block h-[72px] w-[72px] overflow-hidden rounded-sm border-2 border-primary/15 bg-card transition-colors hover:border-primary/50"
-                >
-                  <Image
-                    src={mercenary.imagePath}
-                    alt={mercenary.name}
-                    fill
-                    className="object-cover"
-                    sizes="72px"
-                  />
-                </Link>
-              </motion.div>
-            </TooltipTrigger>
-            <TooltipContent side="top" className="border-border bg-card p-3">
-              <div className="text-center">
-                <p className="font-heading text-sm font-semibold leading-none">
-                  {mercenary.name}
-                </p>
-                <p className="mt-1 text-xs leading-none text-muted-foreground">
-                  {mercenary.title}
-                </p>
-              </div>
-            </TooltipContent>
-          </Tooltip>
-        );
-      })}
-    </motion.div>
+const ROW_COUNT = 3;
+const MIN_SEGMENT_ITEMS = 56;
+
+function buildSeamlessTrack(items: Mercenary[]): Mercenary[] {
+  if (items.length === 0) return [];
+
+  const segment: Mercenary[] = [];
+  while (segment.length < MIN_SEGMENT_ITEMS) {
+    for (const item of items) {
+      segment.push(item);
+      if (segment.length >= MIN_SEGMENT_ITEMS) break;
+    }
+  }
+
+  return [...segment, ...segment];
+}
+
+function buildMarqueeRows(): Mercenary[][] {
+  return Array.from({ length: ROW_COUNT }, (_, rowIndex) => {
+    const offset =
+      rowIndex * Math.ceil(mercenaries.length / ROW_COUNT);
+    const rotated = [
+      ...mercenaries.slice(offset % mercenaries.length),
+      ...mercenaries.slice(0, offset % mercenaries.length),
+    ];
+
+    return buildSeamlessTrack(rotated);
+  });
+}
+
+const MercenaryMarqueeRow = ({
+  track,
+  direction,
+  rowIndex,
+}: {
+  track: Mercenary[];
+  direction: "left" | "right";
+  rowIndex: number;
+}) => (
+  <div className="overflow-hidden">
+    <div
+      className={`flex w-max gap-3 group-hover:[animation-play-state:paused] ${
+        direction === "left" ? "animate-marquee" : "animate-marquee-reverse"
+      }`}
+      style={{ animationDuration: direction === "left" ? "45s" : "50s" }}
+    >
+      {track.map((mercenary, index) => (
+        <MercenaryAvatar
+          key={`row-${rowIndex}-${mercenary.name}-${index}`}
+          mercenary={mercenary}
+        />
+      ))}
+    </div>
+  </div>
+);
+
+const MercenaryMarquee = () => {
+  const [rows] = useState(buildMarqueeRows);
+  const rowDirections: Array<"left" | "right"> = ["left", "right", "left"];
+
+  return (
+    <div className="marquee-edge-fade group relative w-full space-y-3 overflow-hidden">
+      <div
+        className="marquee-edge-overlay-left pointer-events-none absolute inset-y-0 left-0 z-20 w-[min(22vw,13rem)] sm:w-40 md:w-52"
+        aria-hidden="true"
+      />
+      <div
+        className="marquee-edge-overlay-right pointer-events-none absolute inset-y-0 right-0 z-20 w-[min(22vw,13rem)] sm:w-40 md:w-52"
+        aria-hidden="true"
+      />
+
+      {rows.map((track, rowIndex) => (
+        <MercenaryMarqueeRow
+          key={rowIndex}
+          rowIndex={rowIndex}
+          track={track}
+          direction={rowDirections[rowIndex]}
+        />
+      ))}
+    </div>
   );
 };
 
@@ -133,8 +172,10 @@ const MercenariesSection = () => (
 
       <AnimatedSection>
         <div className="flex flex-col items-center gap-6">
-          <MercenaryGrid />
-          <p className="max-w-xl text-center font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
+          <div className="relative w-screen max-w-[100vw] left-1/2 -translate-x-1/2">
+            <MercenaryMarquee />
+          </div>
+          <p className="max-w-xl px-6 text-center font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
             Battle-tested RaidGuild talent. Click to explore the roster.
           </p>
         </div>

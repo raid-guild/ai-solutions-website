@@ -8,15 +8,15 @@ const HeroSection = () => (
     id="home"
     className="relative flex min-h-screen items-center overflow-hidden bg-background pt-16"
   >
-    <Image
-      src="/images/abstract-system-graph-hero.png"
-      alt=""
-      aria-hidden="true"
-      fill
-      priority
-      sizes="100vw"
-      className="object-cover object-center"
-    />
+ <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 h-full w-full object-cover object-center"
+  >
+    <source src="/videos/BGRGAI.mp4" type="video/mp4" />
+</video>
     <div className="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-background/1" />
     <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,transparent_0%,hsl(var(--background)/0.03)_45%,hsl(var(--background)/0.01)_100%)]" />
@@ -35,7 +35,7 @@ const HeroSection = () => (
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6"
+          className="font-heading text-[1.8rem] md:text-[2.4rem] lg:text-[3rem] font-bold leading-[1.1] tracking-tight mb-6"
         >
           Forward-deployed AI operators for the messy middle between{" "}
           <span className="text-primary text-glow-teal">
