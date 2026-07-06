@@ -84,7 +84,7 @@ const HeroSection = () => (
                 className="rounded-sm font-heading tracking-wider uppercase text-sm px-8"
                 asChild
               >
-                <Link href="/contact">Book an AI Readiness Workshop</Link>
+                <Link href="/contact">Book Your Readiness Assessment</Link>
               </Button>
               <Button
                 size="lg"
@@ -96,8 +96,9 @@ const HeroSection = () => (
               </Button>
             </div>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-              Free 30-min consultation. Walk away with a clearer roadmap for
-              making AI useful inside real business processes.
+              Free 30-Minute AI & Operational Readiness Assessment. Determine
+              what is holding you back and where the highest-leverage
+              opportunities exist.
             </p>
           </div>
         </motion.div>

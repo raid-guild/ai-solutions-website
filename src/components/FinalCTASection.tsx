@@ -16,19 +16,23 @@ const meshNodes = Array.from({ length: 12 }, (_, i) => ({
 
 const models = [
   {
+    title: "30-Min Readiness Assessment",
+    desc: "Identify readiness gaps, operational bottlenecks, AI opportunities, and the right next step.",
+  },
+  {
     title: "AI Readiness Workshop",
-    desc: "Map the tools, workflows, data, and team behaviors shaping your current AI adoption.",
+    desc: "Map the tools, workflows, data, and team behaviors shaping practical AI adoption.",
   },
   {
-    title: "AI Operating Layer",
-    desc: "Build the shared context, access rules, and interfaces agents need to work safely.",
+    title: "Operational Foundation Sprint",
+    desc: "Build the shared context, access rules, and system interfaces AI needs to be useful.",
   },
   {
-    title: "Agent Workflow Enablement",
-    desc: "Kickstart employee-led automations, copilots, and human-agent workflows.",
+    title: "Automation & AI Systems",
+    desc: "Launch automations, copilots, and human-agent workflows tied to real operating needs.",
   },
   {
-    title: "Operating Partnership",
+    title: "Continuous Improvement",
     desc: "Keep the system measured, improved, and adopted as the business changes.",
   },
 ];
@@ -83,13 +87,13 @@ const FinalCTASection = () => (
 
       <AnimatedSection delay={0.1}>
         <p className="mx-auto max-w-3xl text-center text-lg text-muted-foreground mb-12">
-          In the first consultation, we map where AI is already showing up,
-          where context is fragmented, and what foundation your team needs before
-          agents can create reliable leverage.
+          Start with a free readiness assessment. We map where AI is already
+          showing up, what operational foundation is missing, and whether a
+          deeper engagement makes sense.
         </p>
       </AnimatedSection>
 
-      <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {models.map((model, i) => (
           <AnimatedSection key={model.title} delay={0.08 + i * 0.08}>
             <motion.div
@@ -119,7 +123,7 @@ const FinalCTASection = () => (
             className="rounded-sm font-heading tracking-wider uppercase text-sm px-10"
             asChild
           >
-            <Link href="/contact">Book an AI Readiness Workshop</Link>
+            <Link href="/contact">Book Your Readiness Assessment</Link>
           </Button>
         </div>
       </AnimatedSection>
