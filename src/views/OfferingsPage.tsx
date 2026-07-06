@@ -46,7 +46,7 @@ const offerings: Offering[] = [
   },
   {
     tier: "Foundation Build",
-    title: "AI Operating Layer",
+    title: "Operational Foundation Sprint",
     outcome:
       "You get the shared context, access rules, and system interfaces that make reporting, automation, and agents reliable.",
     summary:
@@ -70,8 +70,8 @@ const offerings: Offering[] = [
       "Teams that want AI to become a repeatable business capability instead of a collection of disconnected experiments.",
   },
   {
-    tier: "Flywheel Kickstart",
-    title: "Agent Workflow Enablement",
+    tier: "Automation Build",
+    title: "Automation & AI Systems",
     outcome:
       "Your employees build the first practical automations, copilots, and human-agent workflows with expert support beside them.",
     summary:
@@ -95,7 +95,7 @@ const offerings: Offering[] = [
       "Teams that want to kickstart the flywheel: use AI, free time, build better workflows, and create more capacity to keep improving.",
   },
   {
-    tier: "Full Program",
+    tier: "Continuous Improvement",
     title: "Operating Partnership",
     outcome:
       "You get a forward-deployed partner to keep the AI operating layer governed, measured, adopted, and improving while your internal builders level up.",
@@ -114,10 +114,11 @@ const offerings: Offering[] = [
 ];
 
 const pathSteps = [
-  "Map current AI use",
-  "Build the operating layer",
-  "Launch agent-ready workflows",
-  "Train employees to keep compounding gains",
+  "30-Min Readiness Assessment",
+  "AI Readiness Workshop",
+  "Operational Foundation Sprint",
+  "Automation & AI Systems",
+  "Continuous Improvement",
 ];
 
 const Offerings = () => (
@@ -161,7 +162,7 @@ const Offerings = () => (
               transition={{ delay: 0.1 }}
               className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-primary"
             >
-              AI Operating Layer Packages
+              AI & Operational Readiness Packages
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 18 }}
@@ -352,7 +353,7 @@ const Offerings = () => (
         <div className="mx-auto max-w-4xl px-6 text-center">
           <AnimatedSection>
             <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-primary">
-              Schedule Consultation
+              Start With an Assessment
             </p>
             <h2 className="mb-6 font-heading text-3xl font-bold leading-tight md:text-4xl">
               Tell us where AI is already creeping into the business, where work
@@ -365,8 +366,8 @@ const Offerings = () => (
                 className="rounded-sm px-8 font-heading text-sm uppercase tracking-wider"
                 asChild
               >
-                <Link href="https://ai.raidguild.org/contact">
-                  Book an AI Readiness Workshop
+                <Link href="/contact">
+                  Book Your Readiness Assessment
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>

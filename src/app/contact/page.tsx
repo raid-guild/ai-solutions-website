@@ -4,7 +4,7 @@ import ContactPage from "@/views/ContactPage";
 export const metadata: Metadata = {
   title: "Contact | RaidGuild AI Solutions",
   description:
-    "Request a lightweight consultation for AI operating layer strategy, context infrastructure, and agent-ready workflows.",
+    "Request a free AI and operational readiness assessment for context infrastructure, automation opportunities, and agent-ready workflows.",
 };
 
 export default ContactPage;

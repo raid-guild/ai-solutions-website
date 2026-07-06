@@ -36,19 +36,18 @@ const ContactPage = () => (
         <div className="relative mx-auto grid max-w-7xl items-start gap-12 px-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-primary">
-              RaidGuild AI Solutions Contact
+              Free AI & Operational Readiness Assessment
             </p>
             <h1 className="mb-6 max-w-3xl font-heading text-4xl font-bold leading-[1.08] tracking-tight md:text-5xl lg:text-6xl">
-              Bring us the scattered tools, docs, and workflows.{" "}
+              Find out whether your organization is ready for AI.{" "}
               <span className="text-primary text-glow-teal">
-                We&apos;ll map the operating layer.
+                We&apos;ll map what is holding you back.
               </span>
             </h1>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
               Share where AI is already being used, where work still depends on
-              copy-paste, or where agents could help if they had the right
-              context and permissions. We&apos;ll review it and follow up with
-              the clearest next step.
+              copy-paste, or where better systems could create leverage.
+              We&apos;ll review it and follow up with a practical next step.
             </p>
           </div>
 
