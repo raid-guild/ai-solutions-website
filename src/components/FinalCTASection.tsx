@@ -16,20 +16,24 @@ const meshNodes = Array.from({ length: 12 }, (_, i) => ({
 
 const models = [
   {
-    title: "AI Ops Audit",
-    desc: "Map one priority workflow, size the opportunity, and define the first deployment plan.",
+    title: "30-Min Readiness Assessment",
+    desc: "Identify readiness gaps, operational bottlenecks, AI opportunities, and the right next step.",
   },
   {
-    title: "Workflow Deployment",
-    desc: "Embed engineers and operators to build one production-ready automation or agent workflow.",
+    title: "AI Readiness Workshop",
+    desc: "Map the tools, workflows, data, and team behaviors shaping practical AI adoption.",
   },
   {
-    title: "Operating Partnership",
-    desc: "Ongoing monitoring, evaluation, and optimization against business KPIs.",
+    title: "Operational Foundation Sprint",
+    desc: "Build the shared context, access rules, and system interfaces AI needs to be useful.",
   },
   {
-    title: "Embedded AI Team",
-    desc: "Dedicated forward deployed talent working inside your organization.",
+    title: "Automation & AI Systems",
+    desc: "Launch automations, copilots, and human-agent workflows tied to real operating needs.",
+  },
+  {
+    title: "Continuous Improvement",
+    desc: "Keep the system measured, improved, and adopted as the business changes.",
   },
 ];
 
@@ -74,22 +78,22 @@ const FinalCTASection = () => (
       </AnimatedSection>
       <AnimatedSection>
         <h2 className="mx-auto max-w-3xl text-center font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-          Bring us the workflow that keeps breaking{" "}
+          Bring us the scattered tools, docs, and workflows that should become{" "}
           <span className="text-primary text-glow-teal">
-            between demo and production.
+            your AI operating layer.
           </span>
         </h2>
       </AnimatedSection>
 
       <AnimatedSection delay={0.1}>
         <p className="mx-auto max-w-3xl text-center text-lg text-muted-foreground mb-12">
-          In the audit, we map one priority workflow, identify the
-          highest-leverage automation opportunities, and return a practical
-          deployment plan your team can act on.
+          Start with a free readiness assessment. We map where AI is already
+          showing up, what operational foundation is missing, and whether a
+          deeper engagement makes sense.
         </p>
       </AnimatedSection>
 
-      <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {models.map((model, i) => (
           <AnimatedSection key={model.title} delay={0.08 + i * 0.08}>
             <motion.div
@@ -119,7 +123,7 @@ const FinalCTASection = () => (
             className="rounded-sm font-heading tracking-wider uppercase text-sm px-10"
             asChild
           >
-            <Link href="/contact">Book an AI Ops Audit</Link>
+            <Link href="/contact">Book Your Readiness Assessment</Link>
           </Button>
         </div>
       </AnimatedSection>

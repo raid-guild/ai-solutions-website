@@ -43,9 +43,9 @@ const getDefaultValues = (): ContactFormData => ({
 
 export default function ContactForm({
   apiEndpoint = "/api/contact",
-  title = "Start the conversation",
-  description = "Tell us what operational drag you want to turn into a working system. We will use that context to scope the first audit or deployment path.",
-  submitLabel = "Send request",
+  title = "Book your readiness assessment",
+  description = "Tell us what operational drag you want to turn into a working system. We will use that context to prepare the first assessment and identify the highest-leverage next step.",
+  submitLabel = "Request assessment",
   successTitle = "Request received",
   successMessage = "Your request is in, and a member of the Guild will follow up by email.",
 }: ContactFormProps) {
@@ -149,11 +149,11 @@ export default function ContactForm({
             name="automationNeeds"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>What should we help automate? {requiredMarker}</FormLabel>
+                <FormLabel>What should become AI-ready? {requiredMarker}</FormLabel>
                 <FormControl>
                   <Textarea
                     className="min-h-[220px]"
-                    placeholder="Tell us what coordination, workflow, or operational problems your system should solve."
+                    placeholder="Tell us where AI is already showing up, where context is scattered, or which workflows should become agent-ready."
                     {...field}
                   />
                 </FormControl>

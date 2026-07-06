@@ -3,19 +3,19 @@ import AnimatedSection from "./AnimatedSection";
 
 const pillars = [
   {
-    title: "Identify",
-    copy: "We find the operational fronts where a deployed AI team can create immediate leverage.",
-    points: ["Process mapping", "Opportunity sizing", "Deployment plan"],
+    title: "Map",
+    copy: "We trace how work, data, decisions, and handoffs actually move through the business.",
+    points: ["System inventory", "Workflow mapping", "Context gaps"],
   },
   {
-    title: "Deploy",
-    copy: "We embed engineers and operators with your team to ship production workflows inside your business.",
-    points: ["System integration", "Agent buildout", "Human + agent interfaces"],
+    title: "Layer",
+    copy: "We build the operating layer agents need: shared context, scoped access, and usable interfaces.",
+    points: ["Business data model", "Permissioning", "Knowledge layer"],
   },
   {
-    title: "Operate",
-    copy: "We stay close to the work, measuring performance and improving the system as the business changes.",
-    points: ["Monitoring + evals", "KPI tracking", "Iteration loops"],
+    title: "Enable",
+    copy: "We help employees use the foundation to build practical workflows, reclaim time, and keep compounding the gains.",
+    points: ["Agent workflows", "Team training", "Builder habits"],
   },
 ];
 
@@ -23,10 +23,10 @@ const SystemWeavingSection = () => (
   <section className="relative py-32">
     <div className="max-w-7xl mx-auto px-6">
       <AnimatedSection className="text-center mb-20">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-4">What We Do</p>
-        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Forward Deployed Agency</h2>
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-4">What We Build</p>
+        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Your AI Operating Layer</h2>
         <p className="text-muted-foreground text-lg">
-          Strategic audit. Embedded build team. Operated outcomes.
+          The shared context, access, workflows, and training that help employees become agent-enabled operators.
         </p>
       </AnimatedSection>
 

@@ -17,7 +17,7 @@ const MediaSection = ({ posts }: { posts: MediaPost[] }) => (
             Featured AI Solutions dispatches.
           </h2>
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Field notes, public briefs, and essays from the RaidGuild Portal.
+            Field reports, public briefs, and essays from RaidGuild AI work.
           </p>
         </AnimatedSection>
 

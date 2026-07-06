@@ -36,17 +36,17 @@ const RaidGuildSection = () => (
           Origins
         </p>
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-          RaidGuild&apos;s builder culture, deployed into{" "}
+          RaidGuild&apos;s builder culture, applied to{" "}
           <span className="text-accent text-glow-violet">AI operations.</span>
         </h2>
       </AnimatedSection>
 
       <AnimatedSection delay={0.1}>
         <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-4">
-          RaidGuild is a decentralized collective of senior builders who embed
-          fast and ship practical systems. The web3 guild still builds
-          decentralized products; this front deploys the same builder culture
-          into AI systems, agent operations, and automation strategy.
+          RaidGuild is a decentralized collective of senior builders who turn
+          ambiguous systems into practical software. The web3 guild still builds
+          decentralized products; this front applies the same builder culture to
+          AI operating layers, employee enablement, and agent-ready teams.
         </p>
         <p className="text-lg text-foreground font-heading font-semibold mb-12">
           Same guild instincts. New operational frontier.
@@ -56,9 +56,9 @@ const RaidGuildSection = () => (
       <AnimatedSection delay={0.2}>
         <div className="grid sm:grid-cols-3 gap-8">
           {[
-            "Senior operators who embed fast",
+            "Senior builders who transfer capability",
             "Battle-tested coordination across messy systems",
-            "Native to agents, automation, and org design",
+            "Native to agents, automation, and team enablement",
           ].map((point, i) => (
             <motion.div
               key={point}

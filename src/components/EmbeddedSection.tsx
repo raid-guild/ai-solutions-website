@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 
-const phases = ["Embed", "Map", "Build", "Operate", "Optimize"];
+const phases = ["Map", "Layer", "Enable", "Build", "Compound"];
 
 const EmbeddedSection = () => (
   <section className="relative py-32">
@@ -12,17 +12,17 @@ const EmbeddedSection = () => (
           <p className="font-mono text-xs tracking-[0.2em] uppercase text-primary mb-4">How We Work</p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold leading-tight mb-6">
             We don&apos;t hand you software.{" "}
-            <span className="text-primary text-glow-teal">We deploy a team.</span>
+            <span className="text-primary text-glow-teal">We transfer capability.</span>
           </h2>
         </AnimatedSection>
         <AnimatedSection delay={0.1}>
           <p className="text-muted-foreground leading-relaxed mb-8">
-            We place a small, senior agency team inside your organization to redesign workflows, build agentic systems, and unblock execution where the business feels friction. We work with operators, leaders, and technical teams so the new capability becomes part of how work gets done.
+            We work with leaders, operators, and technical teams to redesign workflows, connect context, and teach employees how to build with agents. The goal is not dependency on an outside team; it is internal capability that compounds.
           </p>
         </AnimatedSection>
         <AnimatedSection delay={0.2}>
           <div className="space-y-3 mb-8">
-            {["Forward-deployed engineers", "Operator-led implementation", "Tight feedback loops"].map((point) => (
+            {["Forward-deployed builders", "Employee-led implementation", "Compounding feedback loops"].map((point) => (
               <div key={point} className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                 <span className="text-sm text-muted-foreground font-mono">{point}</span>
@@ -32,7 +32,7 @@ const EmbeddedSection = () => (
         </AnimatedSection>
         <AnimatedSection delay={0.3}>
           <p className="font-heading font-semibold text-lg">
-            We stay until the capability <span className="text-accent text-glow-violet">runs inside the business.</span>
+            We stay until the capability <span className="text-accent text-glow-violet">belongs inside the business.</span>
           </p>
         </AnimatedSection>
       </div>
