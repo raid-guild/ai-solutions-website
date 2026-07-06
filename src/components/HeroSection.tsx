@@ -48,7 +48,7 @@ const HeroSection = () => (
           transition={{ delay: 0.5, duration: 0.7 }}
           className="mb-7 max-w-lg text-base leading-relaxed text-muted-foreground md:mb-8 md:text-lg"
         >
-          RaidGuild helps COOs and CTOs turn scattered prompts, private
+          RaidGuild helps teams turn scattered prompts, private
           automations, and disconnected tools into governed AI workflows
           employees can actually use.
         </motion.p>
