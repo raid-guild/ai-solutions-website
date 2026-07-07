@@ -114,7 +114,7 @@ const MercenaryMarqueeRow = ({
     <div
       className={`flex w-max gap-3 group-hover:[animation-play-state:paused] ${
         direction === "left" ? "animate-marquee" : "animate-marquee-reverse"
-      }`}
+      } motion-reduce:animate-none`}
       style={{ animationDuration: direction === "left" ? "45s" : "50s" }}
     >
       {track.map((mercenary, index) => (
@@ -132,13 +132,13 @@ const MercenaryMarquee = () => {
   const rowDirections: Array<"left" | "right"> = ["left", "right", "left"];
 
   return (
-    <div className="marquee-edge-fade group relative w-full space-y-3 overflow-hidden">
+    <div className="group relative w-full space-y-3 overflow-hidden">
       <div
-        className="marquee-edge-overlay-left pointer-events-none absolute inset-y-0 left-0 z-20 w-[min(22vw,13rem)] sm:w-40 md:w-52"
+        className="pointer-events-none absolute inset-y-0 left-0 z-20 w-[min(22vw,13rem)] bg-gradient-to-r from-background via-background/85 to-transparent sm:w-40 md:w-52"
         aria-hidden="true"
       />
       <div
-        className="marquee-edge-overlay-right pointer-events-none absolute inset-y-0 right-0 z-20 w-[min(22vw,13rem)] sm:w-40 md:w-52"
+        className="pointer-events-none absolute inset-y-0 right-0 z-20 w-[min(22vw,13rem)] bg-gradient-to-l from-background via-background/85 to-transparent sm:w-40 md:w-52"
         aria-hidden="true"
       />
 

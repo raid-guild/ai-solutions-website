@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "RaidGuild AI Solutions",
   description:
     "Forward-deployed AI builders creating operating layers, context infrastructure, and agent-ready workflows for teams becoming AI-enabled organizations.",
+  icons: {
+    icon: "/images/Logomark.svg",
+    shortcut: "/images/Logomark.svg",
+  },
 };
 
 export default function RootLayout({

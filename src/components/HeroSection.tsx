@@ -8,15 +8,27 @@ const HeroSection = () => (
     id="home"
     className="relative flex min-h-[92svh] items-center overflow-hidden bg-background pt-16 md:min-h-screen"
   >
- <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    className="absolute inset-0 h-full w-full object-cover object-center"
-  >
-    <source src="/videos/BGRGAI.mp4" type="video/mp4" />
-</video>
+    <Image
+      src="/images/abstract-system-graph-hero.png"
+      alt=""
+      aria-hidden="true"
+      fill
+      priority
+      sizes="100vw"
+      className="object-cover object-center"
+    />
+    <video
+      aria-hidden="true"
+      autoPlay
+      loop
+      muted
+      playsInline
+      poster="/images/abstract-system-graph-hero.png"
+      preload="metadata"
+      className="absolute inset-0 h-full w-full object-cover object-center motion-reduce:hidden"
+    >
+      <source src="/videos/BGRGAI.mp4" type="video/mp4" />
+    </video>
     <div className="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-background/1" />
     <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,transparent_0%,hsl(var(--background)/0.03)_45%,hsl(var(--background)/0.01)_100%)]" />
