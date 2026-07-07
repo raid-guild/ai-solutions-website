@@ -81,6 +81,13 @@ const AIProjectsSection = () => (
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.6, delay: i * 0.08 }}
                 >
+                  <Link
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${project.name}`}
+                    className="absolute inset-0 z-10"
+                  />
                   <Image
                     src={project.image}
                     alt={project.imageAlt}
@@ -114,7 +121,14 @@ const AIProjectsSection = () => (
                     viewport={{ once: true, margin: "-60px" }}
                     transition={{ duration: 0.45, delay: 0.14 + i * 0.08 }}
                   >
-                    {project.name}
+                    <Link
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-primary"
+                    >
+                      {project.name}
+                    </Link>
                   </motion.h3>
                   <motion.p
                     className="mb-6 text-sm leading-relaxed text-muted-foreground"
