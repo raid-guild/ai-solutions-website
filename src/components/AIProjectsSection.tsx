@@ -8,7 +8,7 @@ const projects = [
   {
     name: "Queen Raida",
     label: "Internal Agent",
-    href: "https://github.com/raid-guild/Queen-Raida",
+    href: "https://x.com/raidguildish",
     icon: Bot,
     image: "/assets/queen-raida.png",
     imageAlt: "Queen Raida character art",

@@ -132,13 +132,13 @@ const MercenaryMarquee = () => {
   const rowDirections: Array<"left" | "right"> = ["left", "right", "left"];
 
   return (
-    <div className="group relative w-full space-y-3 overflow-hidden">
+    <div className="group relative isolate w-full space-y-3 overflow-hidden">
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-20 w-[min(22vw,13rem)] bg-gradient-to-r from-background via-background/85 to-transparent sm:w-40 md:w-52"
+        className="pointer-events-none absolute inset-y-0 left-0 z-30 w-[min(20vw,12rem)] bg-gradient-to-r from-background from-10% via-background/80 via-55% to-transparent sm:w-36 md:w-48"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 z-20 w-[min(22vw,13rem)] bg-gradient-to-l from-background via-background/85 to-transparent sm:w-40 md:w-52"
+        className="pointer-events-none absolute inset-y-0 right-0 z-30 w-[min(20vw,12rem)] bg-gradient-to-l from-background from-10% via-background/80 via-55% to-transparent sm:w-36 md:w-48"
         aria-hidden="true"
       />
 
@@ -170,9 +170,9 @@ const MercenariesSection = () => (
         </h2>
       </AnimatedSection>
 
-      <AnimatedSection>
+      <AnimatedSection className="mx-auto max-w-7xl">
         <div className="flex flex-col items-center gap-6">
-          <div className="relative w-screen max-w-[100vw] left-1/2 -translate-x-1/2">
+          <div className="relative w-full">
             <MercenaryMarquee />
           </div>
           <p className="max-w-xl px-6 text-center font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
