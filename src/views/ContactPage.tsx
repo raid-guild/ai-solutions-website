@@ -36,18 +36,18 @@ const ContactPage = () => (
         <div className="relative mx-auto grid max-w-7xl items-start gap-12 px-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-primary">
-              Free AI & Operational Readiness Assessment
+              Talk to a Builder
             </p>
             <h1 className="mb-6 max-w-3xl font-heading text-4xl font-bold leading-[1.08] tracking-tight md:text-5xl lg:text-6xl">
-              Find out whether your organization is ready for AI.{" "}
+              Tell us where computer work slows your team down.{" "}
               <span className="text-primary text-glow-teal">
-                We&apos;ll map what is holding you back.
+                We will help you find a practical AI starting point.
               </span>
             </h1>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Share where AI is already being used, where work still depends on
-              copy-paste, or where better systems could create leverage.
-              We&apos;ll review it and follow up with a practical next step.
+              Send your email and we will follow up like humans. If you want,
+              add a quick snapshot of the tools, tasks, and screen-heavy work
+              your team wants to make easier.
             </p>
           </div>
 

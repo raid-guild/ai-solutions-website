@@ -15,9 +15,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        heading: ["Space Grotesk", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ["var(--font-eb-garamond)", "Georgia", "serif"],
+        heading: ["var(--font-mazius-display)", "Georgia", "serif"],
+        mono: ["var(--font-ubuntu-mono)", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
