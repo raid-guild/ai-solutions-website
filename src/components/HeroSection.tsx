@@ -31,7 +31,7 @@ const HeroSection = () => (
           transition={{ delay: 0.2 }}
           className="mb-5 font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-accent md:mb-6 md:text-xs"
         >
-          AI Bootstrap for Small Businesses
+          AI Bootstrap for Owner-Led Businesses
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -39,9 +39,9 @@ const HeroSection = () => (
           transition={{ delay: 0.3, duration: 0.8 }}
           className="mb-6 font-heading text-5xl font-bold leading-[0.92] tracking-normal md:text-6xl lg:text-7xl"
         >
-          Give your team
+          Upskill your
           <span className="block text-primary text-glow-violet">
-            AI superpowers.
+            business with AI.
           </span>
         </motion.h1>
         <motion.p
@@ -50,10 +50,9 @@ const HeroSection = () => (
           transition={{ delay: 0.5, duration: 0.7 }}
           className="mb-7 max-w-xl text-lg leading-relaxed text-muted-foreground md:mb-8 md:text-xl"
         >
-          AI can make your team feel like it has a computer expert on call.
-          RaidGuild helps small businesses make that real with simple
-          workflows, hands-on guidance, and practical AI habits for everyday
-          screen work.
+          RaidGuild shows business owners how to use the latest AI tools on
+          real work. Whether it is a lean team or one person wearing every hat,
+          we help turn repeatable tasks into workflows you can own.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -62,9 +61,9 @@ const HeroSection = () => (
           className="mb-8 space-y-3 md:mb-10"
         >
           {[
-            "Learn what AI can actually do in your business",
-            "Practice on real admin and screen-heavy work",
-            "Leave with workflows your team understands",
+            "Spot the repeated tasks costing time",
+            "Practice useful AI habits on real work",
+            "Turn known paths into workflows people trust",
           ].map((point) => (
             <div key={point} className="flex items-center gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />

@@ -78,9 +78,9 @@ const Offerings = () => (
               transition={{ delay: 0.2, duration: 0.7 }}
               className="mb-6 max-w-4xl font-heading text-5xl font-bold leading-[0.92] md:text-6xl lg:text-7xl"
             >
-              A hands-on AI bootstrap for small business{" "}
+              A hands-on AI bootstrap for owner-led{" "}
               <span className="text-primary text-glow-violet">
-                owners and teams.
+                businesses and teams.
               </span>
             </motion.h1>
             <motion.p
@@ -221,7 +221,7 @@ const Offerings = () => (
             height={24}
             className="h-6 w-6"
           />
-          AI Bootstrap for Small Businesses · RaidGuild
+          AI Bootstrap for Owner-Led Businesses · RaidGuild
         </span>
         <span className="font-mono text-xs text-muted-foreground/50">
           AI bootstrap, workflow enablement, and operational handoff.

@@ -14,11 +14,45 @@ type Particle = {
   hue: "primary" | "accent" | "soft";
 };
 
+type WorkflowPath = {
+  start: [number, number];
+  controlA: [number, number];
+  controlB: [number, number];
+  end: [number, number];
+  progress: number;
+  speed: number;
+  hue: "primary" | "accent";
+};
+
 const colors = {
   accent: [136, 229, 234],
   primary: [238, 57, 126],
   soft: [236, 229, 205],
 };
+
+const workflowPathSeeds: Omit<WorkflowPath, "progress" | "speed">[] = [
+  {
+    start: [0.56, 0.28],
+    controlA: [0.68, 0.14],
+    controlB: [0.82, 0.28],
+    end: [0.9, 0.18],
+    hue: "accent",
+  },
+  {
+    start: [0.48, 0.56],
+    controlA: [0.62, 0.42],
+    controlB: [0.72, 0.64],
+    end: [0.88, 0.52],
+    hue: "primary",
+  },
+  {
+    start: [0.58, 0.78],
+    controlA: [0.7, 0.66],
+    controlB: [0.78, 0.82],
+    end: [0.93, 0.72],
+    hue: "accent",
+  },
+];
 
 const getParticleCount = (width: number) => {
   if (width < 640) return 38;
@@ -56,6 +90,28 @@ const createParticle = (
   };
 };
 
+const cubicPoint = (
+  start: [number, number],
+  controlA: [number, number],
+  controlB: [number, number],
+  end: [number, number],
+  progress: number,
+) => {
+  const inverse = 1 - progress;
+  const x =
+    inverse ** 3 * start[0] +
+    3 * inverse ** 2 * progress * controlA[0] +
+    3 * inverse * progress ** 2 * controlB[0] +
+    progress ** 3 * end[0];
+  const y =
+    inverse ** 3 * start[1] +
+    3 * inverse ** 2 * progress * controlA[1] +
+    3 * inverse * progress ** 2 * controlB[1] +
+    progress ** 3 * end[1];
+
+  return { x, y };
+};
+
 const HeroParticleField = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -71,6 +127,7 @@ const HeroParticleField = () => {
     let width = 0;
     let height = 0;
     let particles: Particle[] = [];
+    let workflowPaths: WorkflowPath[] = [];
     const pointer = { active: false, x: 0, y: 0 };
 
     const resize = () => {
@@ -90,6 +147,11 @@ const HeroParticleField = () => {
           createParticle(width, height, true),
         ),
       ];
+      workflowPaths = workflowPathSeeds.map((path, index) => ({
+        ...path,
+        progress: index / workflowPathSeeds.length,
+        speed: 0.0022 + index * 0.0004,
+      }));
     };
 
     const drawBackground = () => {
@@ -112,6 +174,58 @@ const HeroParticleField = () => {
     const draw = () => {
       context.clearRect(0, 0, width, height);
       drawBackground();
+
+      for (const path of workflowPaths) {
+        const [red, green, blue] = colors[path.hue];
+        context.strokeStyle = `rgba(${red}, ${green}, ${blue}, 0.2)`;
+        context.lineWidth = 1.1;
+        context.setLineDash([2, 10]);
+        context.beginPath();
+        context.moveTo(path.start[0] * width, path.start[1] * height);
+        context.bezierCurveTo(
+          path.controlA[0] * width,
+          path.controlA[1] * height,
+          path.controlB[0] * width,
+          path.controlB[1] * height,
+          path.end[0] * width,
+          path.end[1] * height,
+        );
+        context.stroke();
+        context.setLineDash([]);
+
+        const marker = cubicPoint(
+          path.start,
+          path.controlA,
+          path.controlB,
+          path.end,
+          path.progress,
+        );
+        const markerX = marker.x * width;
+        const markerY = marker.y * height;
+        const markerGlow = context.createRadialGradient(
+          markerX,
+          markerY,
+          0,
+          markerX,
+          markerY,
+          28,
+        );
+        markerGlow.addColorStop(0, `rgba(${red}, ${green}, ${blue}, 0.34)`);
+        markerGlow.addColorStop(1, `rgba(${red}, ${green}, ${blue}, 0)`);
+        context.fillStyle = markerGlow;
+        context.beginPath();
+        context.arc(markerX, markerY, 28, 0, Math.PI * 2);
+        context.fill();
+
+        context.fillStyle = `rgba(${red}, ${green}, ${blue}, 0.78)`;
+        context.beginPath();
+        context.arc(markerX, markerY, 3.2, 0, Math.PI * 2);
+        context.fill();
+
+        if (!motionQuery.matches) {
+          path.progress = (path.progress + path.speed) % 1;
+        }
+      }
 
       for (const particle of particles) {
         if (!motionQuery.matches) {

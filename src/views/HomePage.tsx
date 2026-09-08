@@ -25,7 +25,7 @@ const Index = () => (
             height={24}
             className="h-6 w-6"
           />
-          AI Bootstrap for Small Businesses · RaidGuild
+          AI Bootstrap for Owner-Led Businesses · RaidGuild
         </span>
         <span className="font-mono text-xs text-muted-foreground/50">
           Hands-on guidance, simple workflows, and practical AI habits.

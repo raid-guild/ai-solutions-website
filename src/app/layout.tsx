@@ -6,7 +6,7 @@ import "@/index.css";
 export const metadata: Metadata = {
   title: "RaidGuild AI Solutions",
   description:
-    "Hands-on AI bootstrap for small businesses: simple workflows, practical habits, and guidance your team can keep using.",
+    "Hands-on AI bootstrap for owner-led businesses: simple workflows, practical habits, and guidance your team can keep using.",
   icons: {
     icon: "/images/Logomark.svg",
     shortcut: "/images/Logomark.svg",
