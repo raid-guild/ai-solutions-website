@@ -16,24 +16,20 @@ const meshNodes = Array.from({ length: 12 }, (_, i) => ({
 
 const models = [
   {
-    title: "30-Min Readiness Assessment",
-    desc: "Identify readiness gaps, operational bottlenecks, AI opportunities, and the right next step.",
+    title: "Assess",
+    desc: "Find where AI is already showing up and which workflows are ready.",
   },
   {
-    title: "AI Readiness Workshop",
-    desc: "Map the tools, workflows, data, and team behaviors shaping practical AI adoption.",
+    title: "Install",
+    desc: "Configure tools, access, context, and first workflow patterns.",
   },
   {
-    title: "Operational Foundation Sprint",
-    desc: "Build the shared context, access rules, and system interfaces AI needs to be useful.",
+    title: "Bootstrap",
+    desc: "Help employees ship 2-3 useful AI workflows in 30 days.",
   },
   {
-    title: "Automation & AI Systems",
-    desc: "Launch automations, copilots, and human-agent workflows tied to real operating needs.",
-  },
-  {
-    title: "Continuous Improvement",
-    desc: "Keep the system measured, improved, and adopted as the business changes.",
+    title: "Handoff",
+    desc: "Document what changed, what to monitor, and what to build next.",
   },
 ];
 
@@ -78,22 +74,22 @@ const FinalCTASection = () => (
       </AnimatedSection>
       <AnimatedSection>
         <h2 className="mx-auto max-w-3xl text-center font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-          Bring us the scattered tools, docs, and workflows that should become{" "}
+          Start with a practical AI bootstrap for{" "}
           <span className="text-primary text-glow-teal">
-            your AI operating layer.
+            your current team.
           </span>
         </h2>
       </AnimatedSection>
 
       <AnimatedSection delay={0.1}>
         <p className="mx-auto max-w-3xl text-center text-lg text-muted-foreground mb-12">
-          Start with a free readiness assessment. We map where AI is already
-          showing up, what operational foundation is missing, and whether a
-          deeper engagement makes sense.
+          We help high-agency SMB teams move from scattered AI use to useful,
+          governed workflows through a free assessment, half-day install, 30-day
+          bootstrap, and clear handoff report.
         </p>
       </AnimatedSection>
 
-      <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {models.map((model, i) => (
           <AnimatedSection key={model.title} delay={0.08 + i * 0.08}>
             <motion.div
@@ -120,10 +116,9 @@ const FinalCTASection = () => (
         <div className="flex flex-wrap justify-center gap-4">
           <Button
             size="lg"
-            className="rounded-sm font-heading tracking-wider uppercase text-sm px-10"
             asChild
           >
-            <Link href="/contact">Book Your Readiness Assessment</Link>
+            <Link href="/contact">Book Readiness Assessment</Link>
           </Button>
         </div>
       </AnimatedSection>

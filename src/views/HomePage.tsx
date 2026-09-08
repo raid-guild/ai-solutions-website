@@ -3,24 +3,15 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import AIAdoptionTrapSection from "@/components/AIAdoptionTrapSection";
-import MercenariesSection from "@/components/MercenariesSection";
-import AIProjectsSection from "@/components/AIProjectsSection";
-import MediaSection from "@/components/MediaSection";
-import RaidGuildSection from "@/components/RaidGuildSection";
-import FinalCTASection from "@/components/FinalCTASection";
-import type { MediaPost } from "@/lib/portal-posts";
+import BootstrapFitSection from "@/components/BootstrapFitSection";
+import AIBootstrapSection from "@/components/AIBootstrapSection";
 
-const Index = ({ mediaPosts }: { mediaPosts: MediaPost[] }) => (
+const Index = () => (
   <div className="noise-bg relative">
     <Navbar />
     <HeroSection />
-    <AIAdoptionTrapSection />
-    <MercenariesSection />
-    <AIProjectsSection />
-    <MediaSection posts={mediaPosts} />
-    <RaidGuildSection />
-    <FinalCTASection />
+    <BootstrapFitSection />
+    <AIBootstrapSection />
 
     {/* Footer */}
     <footer className="border-t border-border py-8">
@@ -34,11 +25,10 @@ const Index = ({ mediaPosts }: { mediaPosts: MediaPost[] }) => (
             height={24}
             className="h-6 w-6"
           />
-          Forward-Deployed AI Builders · RaidGuild
+          AI Bootstrap for Owner-Led Businesses · RaidGuild
         </span>
         <span className="font-mono text-xs text-muted-foreground/50">
-          Shared context, governed access, and practical agent workflows for
-          teams becoming AI-ready.
+          Hands-on guidance, simple workflows, and practical AI habits.
         </span>
       </div>
     </footer>

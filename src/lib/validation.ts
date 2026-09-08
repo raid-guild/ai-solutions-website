@@ -4,9 +4,12 @@ const contactFieldsSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address.",
   }),
-  automationNeeds: z.string().min(10, {
-    message: "Please describe your automation needs in at least 10 characters.",
-  }),
+  companyName: z.string().max(120).optional(),
+  aiUseStage: z.string().max(80).optional(),
+  currentTools: z.array(z.string().max(80)).optional(),
+  workflowAreas: z.array(z.string().max(80)).optional(),
+  assistantWish: z.string().max(1200).optional(),
+  automationNeeds: z.string().max(1600).optional(),
 });
 
 export const contactFormSchema = contactFieldsSchema.extend({

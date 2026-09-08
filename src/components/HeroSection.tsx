@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import HeroParticleField from "./HeroParticleField";
 
 const HeroSection = () => (
   <section
@@ -15,23 +16,12 @@ const HeroSection = () => (
       fill
       priority
       sizes="100vw"
-      className="object-cover object-center"
+      className="object-cover object-center opacity-30"
     />
-    <video
-      aria-hidden="true"
-      autoPlay
-      loop
-      muted
-      playsInline
-      poster="/images/abstract-system-graph-hero.png"
-      preload="metadata"
-      className="absolute inset-0 h-full w-full object-cover object-center motion-reduce:hidden"
-    >
-      <source src="/videos/BGRGAI.mp4" type="video/mp4" />
-    </video>
-    <div className="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-background/1" />
-    <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,transparent_0%,hsl(var(--background)/0.03)_45%,hsl(var(--background)/0.01)_100%)]" />
+    <HeroParticleField />
+    <div className="absolute inset-0 bg-gradient-to-r from-background via-background/45 to-background/5" />
+    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-background/60" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_45%,hsl(var(--accent)/0.12)_0%,transparent_32%,hsl(var(--background)/0.08)_100%)]" />
 
     <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-6 py-14 md:py-20">
       <div className="max-w-2xl">
@@ -39,30 +29,30 @@ const HeroSection = () => (
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="mb-5 font-mono text-[11px] uppercase tracking-[0.2em] text-primary md:mb-6 md:text-xs"
+          className="mb-5 font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-accent md:mb-6 md:text-xs"
         >
-          Forward-Deployed AI Builders
+          AI Bootstrap for Owner-Led Businesses
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="font-heading text-[1.8rem] md:text-[2.4rem] lg:text-[3rem] font-bold leading-[1.1] tracking-tight mb-6"
+          className="mb-6 font-heading text-5xl font-bold leading-[0.92] tracking-normal md:text-6xl lg:text-7xl"
         >
-          Your team is already using AI.{" "}
-          <span className="text-primary text-glow-teal">
-            Now make it operational.
+          Upskill your
+          <span className="block text-primary text-glow-violet">
+            business with AI.
           </span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.7 }}
-          className="mb-7 max-w-lg text-base leading-relaxed text-muted-foreground md:mb-8 md:text-lg"
+          className="mb-7 max-w-xl text-lg leading-relaxed text-muted-foreground md:mb-8 md:text-xl"
         >
-          RaidGuild helps teams turn scattered prompts, private
-          automations, and disconnected tools into governed AI workflows
-          employees can actually use.
+          RaidGuild shows business owners how to use the latest AI tools on
+          real work. Whether it is a lean team or one person wearing every hat,
+          we help turn repeatable tasks into workflows you can own.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -71,13 +61,13 @@ const HeroSection = () => (
           className="mb-8 space-y-3 md:mb-10"
         >
           {[
-            "Connect docs, tools, data, approvals, and workflows",
-            "Add scoped access, human review, and agent-ready interfaces",
-            "Train employees to build safe automations that compound",
+            "Spot the repeated tasks costing time",
+            "Practice useful AI habits on real work",
+            "Turn known paths into workflows people trust",
           ].map((point) => (
             <div key={point} className="flex items-center gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-              <span className="text-sm text-muted-foreground font-mono">
+              <span className="font-mono text-sm text-muted-foreground">
                 {point}
               </span>
             </div>
@@ -93,24 +83,23 @@ const HeroSection = () => (
             <div className="flex flex-wrap gap-4">
               <Button
                 size="lg"
-                className="rounded-sm font-heading tracking-wider uppercase text-sm px-8"
+                className="px-8"
                 asChild
               >
-                <Link href="/contact">Book Your Readiness Assessment</Link>
+                <Link href="/contact">Talk to a Builder</Link>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-sm font-heading tracking-wider uppercase text-sm px-8 border-primary/30 text-primary hover:bg-primary/10"
+                className="border-accent/40 px-8 text-accent hover:bg-accent/10"
                 asChild
               >
-                <Link href="/offerings">View the packages</Link>
+                <Link href="/offerings">See How It Works</Link>
               </Button>
             </div>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-              Free 30-Minute AI & Operational Readiness Assessment. Determine
-              what is holding you back and where the highest-leverage
-              opportunities exist.
+              Built for owners and teams who want practical AI help without
+              turning adoption into a big technical project.
             </p>
           </div>
         </motion.div>

@@ -41,9 +41,19 @@ const escapeHtml = (value: string) =>
 
 const createSummary = (contactData: ContactApiData): ContactSummary => ({
   email: contactData.email,
+  companyName: contactData.companyName,
+  aiUseStage: contactData.aiUseStage,
+  currentTools: contactData.currentTools,
+  workflowAreas: contactData.workflowAreas,
+  assistantWish: contactData.assistantWish,
   automationNeeds: contactData.automationNeeds,
   source: CONTACT_SOURCE,
 });
+
+const formatList = (items?: string[]) =>
+  items && items.length > 0 ? items.join(", ") : "Not answered";
+
+const formatOptional = (value?: string) => value || "Not answered";
 
 const createSpamAcceptedResponse = () =>
   NextResponse.json(
@@ -70,7 +80,12 @@ const formatDiscordMessage = (summary: ContactSummary) => {
     "**New RaidGuild AI Solutions contact request**",
     `**Source:** ${summary.source}`,
     `**Email:** ${summary.email}`,
-    `**Automation needs:**\n${summary.automationNeeds}`,
+    `**Company:** ${formatOptional(summary.companyName)}`,
+    `**AI use stage:** ${formatOptional(summary.aiUseStage)}`,
+    `**Current tools:** ${formatList(summary.currentTools)}`,
+    `**Workflow areas:** ${formatList(summary.workflowAreas)}`,
+    `**Computer-using assistant wish:**\n${formatOptional(summary.assistantWish)}`,
+    `**Short note:**\n${formatOptional(summary.automationNeeds)}`,
   ];
 
   return truncate(sections.join("\n\n"), DISCORD_MESSAGE_LIMIT);
@@ -82,17 +97,30 @@ const formatEmail = (summary: ContactSummary) => {
     "",
     `Source: ${summary.source}`,
     `Email: ${summary.email}`,
+    `Company: ${formatOptional(summary.companyName)}`,
+    `AI use stage: ${formatOptional(summary.aiUseStage)}`,
+    `Current tools: ${formatList(summary.currentTools)}`,
+    `Workflow areas: ${formatList(summary.workflowAreas)}`,
     "",
-    "Automation needs:",
-    summary.automationNeeds,
+    "Computer-using assistant wish:",
+    formatOptional(summary.assistantWish),
+    "",
+    "Short note:",
+    formatOptional(summary.automationNeeds),
   ].join("\n");
 
   const html = `
     <h1>New RaidGuild AI Solutions contact request</h1>
     <p><strong>Source:</strong> ${escapeHtml(summary.source)}</p>
     <p><strong>Email:</strong> ${escapeHtml(summary.email)}</p>
-    <h2>Automation needs</h2>
-    <p>${escapeHtml(summary.automationNeeds).replaceAll("\n", "<br />")}</p>
+    <p><strong>Company:</strong> ${escapeHtml(formatOptional(summary.companyName))}</p>
+    <p><strong>AI use stage:</strong> ${escapeHtml(formatOptional(summary.aiUseStage))}</p>
+    <p><strong>Current tools:</strong> ${escapeHtml(formatList(summary.currentTools))}</p>
+    <p><strong>Workflow areas:</strong> ${escapeHtml(formatList(summary.workflowAreas))}</p>
+    <h2>Computer-using assistant wish</h2>
+    <p>${escapeHtml(formatOptional(summary.assistantWish)).replaceAll("\n", "<br />")}</p>
+    <h2>Short note</h2>
+    <p>${escapeHtml(formatOptional(summary.automationNeeds)).replaceAll("\n", "<br />")}</p>
   `;
 
   return { text, html };

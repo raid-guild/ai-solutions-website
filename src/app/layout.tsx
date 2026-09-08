@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Providers from "@/app/providers";
+import { ebGaramond, maziusDisplay, ubuntuMono } from "@/lib/fonts";
 import "@/index.css";
 
 export const metadata: Metadata = {
   title: "RaidGuild AI Solutions",
   description:
-    "Forward-deployed AI builders creating operating layers, context infrastructure, and agent-ready workflows for teams becoming AI-enabled organizations.",
+    "Hands-on AI bootstrap for owner-led businesses: simple workflows, practical habits, and guidance your team can keep using.",
   icons: {
     icon: "/images/Logomark.svg",
     shortcut: "/images/Logomark.svg",
@@ -18,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-brand-reign="louchi" className="dark">
       <head>
         <script
           async
@@ -31,7 +32,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>
+      <body
+        className={`${maziusDisplay.variable} ${ebGaramond.variable} ${ubuntuMono.variable}`}
+      >
         <Providers>{children}</Providers>
       </body>
     </html>
